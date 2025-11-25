@@ -1,0 +1,44 @@
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+.metadata/
+bin/
+
+### Java ###
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+### OS-specific ###
+.DS_Store
+Thumbs.db
+
+### Lombok generated ###
+lombok.config
+
+### Logs, temp, cache ###
+*.log
+logs/
+*.tmp
+
+### H2 database ###
+*.db
+*.mv.db
+*.h2.db
+
+### Test ###
+test-output/
+surefire-reports/
+
