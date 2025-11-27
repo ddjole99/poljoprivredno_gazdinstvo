@@ -28,11 +28,16 @@ public class ParcelaDto {
 	@NotNull(message = "Povrsina parcele je obavezna")
 	@Positive(message = "Povrsina mora biti veca od nula")
 	private Double povrsina;
+	
+	@NotNull(message = "Tip zemljista je obavezan")
+	private Long tipZeljista;
+	
 
 	public ParcelaDto(Long parcelaID) {
 		super();
 		this.parcelaID = parcelaID;
 	}
+
 	
 	
 }

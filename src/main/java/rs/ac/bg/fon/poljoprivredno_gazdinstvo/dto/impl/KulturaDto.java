@@ -26,7 +26,7 @@ public class KulturaDto {
 	public KulturaDto(Long kulturaID) {
 		super();
 		this.kulturaID = kulturaID;
-	}
+	}	
 	
 	
 }
