@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,17 +25,11 @@ public class StavkaSetveDto {
 	@NotNull(message = "Aktivnost je obavezna")
 	private Long aktivnostID;
 	
-	private String nazivAktivnosti;
-	
-	private String tipAktivnosti;
+	@NotNull(message = "Cena aktivnosti je obavezna")
+	@Positive(message = "Cena mora biti veca od 0")
+	private Double cena;
 
-	public StavkaSetveDto(Long id,
-			@NotNull(message = "Datum aktivnost je obavezan") @PastOrPresent(message = "Datum atkivnosti ne sme biti u buducnosti") LocalDate datum,
-			@NotNull(message = "Aktivnost je obavezna") Long aktivnostID) {
-		this.id = id;
-		this.datum = datum;
-		this.aktivnostID = aktivnostID;
-	}
+	
 	
 	
 }

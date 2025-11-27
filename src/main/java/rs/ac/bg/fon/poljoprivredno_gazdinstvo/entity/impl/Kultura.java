@@ -15,9 +15,9 @@ public class Kultura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long kulturaID;
-	
+
 	private String naziv;
-	
+
 	private String sorta;
 
 	public Long getKulturaID() {
@@ -46,7 +46,12 @@ public class Kultura {
 
 	@Override
 	public String toString() {
-		return naziv+" "+sorta;
+		return naziv + " " + sorta;
+	}
+
+	public Kultura(Long kulturaID) {
+		super();
+		this.kulturaID = kulturaID;
 	}
 
 }
