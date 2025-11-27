@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl;
 
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Status;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve;
 
 @NoArgsConstructor
@@ -34,7 +36,10 @@ public class SetvaDto {
 
 	@NotNull(message = "Datum zavrsetka je obavezan")
 	private LocalDate datumZavrsetka;
-
+	
+	@NotNull(message = "Status setve je obavezan")
+	private Status status;
+	
 	@Valid
 	private List<StavkaSetveDto> stavkeSetve=new ArrayList<StavkaSetveDto>();
 	
