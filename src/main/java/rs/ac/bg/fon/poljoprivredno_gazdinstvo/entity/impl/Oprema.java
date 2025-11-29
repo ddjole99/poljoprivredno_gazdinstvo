@@ -27,6 +27,7 @@ public class Oprema {
 	@ManyToMany(mappedBy = "oprema")
 	private List<Aktivnost> aktivnosti=new ArrayList<Aktivnost>();
 
+	
 	public Long getOpremaID() {
 		return opremaID;
 	}
@@ -62,6 +63,11 @@ public class Oprema {
 	@Override
 	public String toString() {
 		return "Oprema [naziv=" + naziv + ", tipOpreme=" + tipOpreme + "]";
+	}
+
+	public Oprema(Long opremaID) {
+		super();
+		this.opremaID = opremaID;
 	}
 	
 	
