@@ -1,9 +1,12 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.OpremaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Oprema;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+@Component
 public class OpremaMapper implements DtoEntityMapper<OpremaDto, Oprema>{
 
 	@Override

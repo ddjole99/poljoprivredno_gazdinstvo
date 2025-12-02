@@ -1,9 +1,12 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.KulturaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Kultura;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+@Component
 public class KulturaMapper implements DtoEntityMapper<KulturaDto, Kultura>{
 
 	@Override

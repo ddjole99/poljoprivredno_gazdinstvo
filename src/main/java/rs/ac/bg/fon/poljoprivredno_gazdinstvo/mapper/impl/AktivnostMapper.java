@@ -2,12 +2,15 @@ package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.AktivnostDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Oprema;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipAktivnosti;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+@Component
 public class AktivnostMapper implements DtoEntityMapper<AktivnostDto, Aktivnost> {
 
 	@Override

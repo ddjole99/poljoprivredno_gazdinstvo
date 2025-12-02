@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.SetvaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.StavkaSetveDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost;
@@ -9,6 +11,7 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+@Component
 public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 
 	@Override

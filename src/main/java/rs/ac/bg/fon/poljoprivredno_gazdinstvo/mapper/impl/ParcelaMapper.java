@@ -1,10 +1,13 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.ParcelaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Parcela;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipZemljista;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+@Component
 public class ParcelaMapper implements DtoEntityMapper<ParcelaDto, Parcela> {
 
 	@Override
