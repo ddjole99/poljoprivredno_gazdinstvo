@@ -30,10 +30,7 @@ public class AktivnostMapper implements DtoEntityMapper<AktivnostDto, Aktivnost>
 		aktivnost.setAktivnostID(t.getAktivnostID());
 		aktivnost.setNaziv(t.getNaziv());
 		aktivnost.setTipAktivnosti(TipAktivnosti.valueOf(t.getTipAktivnosti()));
-		if (t.getOpremaIDs() != null) {
-			List<Oprema> oprema = t.getOpremaIDs().stream().map(id -> new Oprema(id)).toList();
-			aktivnost.setOprema(oprema);
-		}
+		
 		return aktivnost;
 
 	}
