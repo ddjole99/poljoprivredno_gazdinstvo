@@ -30,7 +30,7 @@ public class ParcelaDto {
 	private Double povrsina;
 	
 	@NotNull(message = "Tip zemljista je obavezan")
-	private Long tipZeljista;
+	private Long tipZemljista;
 	
 
 	public ParcelaDto(Long parcelaID) {

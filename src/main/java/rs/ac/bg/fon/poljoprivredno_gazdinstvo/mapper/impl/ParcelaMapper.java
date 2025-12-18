@@ -31,8 +31,8 @@ public class ParcelaMapper implements DtoEntityMapper<ParcelaDto, Parcela> {
 		parcela.setNaziv(t.getNaziv());
 		parcela.setLokacija(t.getLokacija());
 		parcela.setPovrsina(t.getPovrsina());
-		if(t.getTipZeljista()!=null)
-			parcela.setTipZemljista(new TipZemljista(t.getTipZeljista()));
+		if(t.getTipZemljista()!=null)
+			parcela.setTipZemljista(new TipZemljista(t.getTipZemljista()));
 		
 		return parcela;
 	}
