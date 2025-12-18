@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -86,6 +88,23 @@ public class Parcela {
 		return "Parcela [naziv=" + naziv + ", lokacija=" + lokacija + ", povrsina=" + povrsina + ", tipZemljista="
 				+ tipZemljista + "]";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(parcelaID);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Parcela other = (Parcela) obj;
+		return Objects.equals(parcelaID, other.parcelaID);
+	}
+
 	
 }

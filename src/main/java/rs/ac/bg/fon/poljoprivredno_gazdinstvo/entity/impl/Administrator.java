@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -67,5 +69,25 @@ public class Administrator {
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, passwordHash);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Administrator other = (Administrator) obj;
+		return Objects.equals(email, other.email) && Objects.equals(passwordHash, other.passwordHash);
+	}
+
+	
+	
 
 }

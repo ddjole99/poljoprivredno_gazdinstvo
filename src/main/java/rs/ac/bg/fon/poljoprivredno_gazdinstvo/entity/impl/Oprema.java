@@ -2,6 +2,7 @@ package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,15 +20,14 @@ public class Oprema {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long opremaID;
-	
-	private String naziv;
-	
-	private String tipOpreme;
-	
-	@ManyToMany(mappedBy = "oprema")
-	private List<Aktivnost> aktivnosti=new ArrayList<Aktivnost>();
 
-	
+	private String naziv;
+
+	private String tipOpreme;
+
+	@ManyToMany(mappedBy = "oprema")
+	private List<Aktivnost> aktivnosti = new ArrayList<Aktivnost>();
+
 	public Long getOpremaID() {
 		return opremaID;
 	}
@@ -69,6 +69,23 @@ public class Oprema {
 		super();
 		this.opremaID = opremaID;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(opremaID);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Oprema other = (Oprema) obj;
+		return Objects.equals(opremaID, other.opremaID);
+	}
+
+
 }

@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -65,6 +67,23 @@ public class TipZemljista {
 	@Override
 	public String toString() {
 		return naziv;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(tipZemljistaID);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TipZemljista other = (TipZemljista) obj;
+		return Objects.equals(tipZemljistaID, other.tipZemljistaID);
 	}
 	
 	

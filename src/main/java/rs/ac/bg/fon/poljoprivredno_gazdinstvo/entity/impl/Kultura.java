@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -52,6 +54,23 @@ public class Kultura {
 	public Kultura(Long kulturaID) {
 		super();
 		this.kulturaID = kulturaID;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(kulturaID);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Kultura other = (Kultura) obj;
+		return Objects.equals(kulturaID, other.kulturaID);
 	}
 
 }
