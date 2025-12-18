@@ -64,12 +64,9 @@ public class KulturaController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		boolean deleted = kulturaService.delete(id);
+		kulturaService.delete(id);
 
-		if (!deleted)
-			return ResponseEntity.notFound().build();
-
-		return ResponseEntity.noContent().build();
+		return new ResponseEntity(HttpStatus.OK);
 
 	}
 }

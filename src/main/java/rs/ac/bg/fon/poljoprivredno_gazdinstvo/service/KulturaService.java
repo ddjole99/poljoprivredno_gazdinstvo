@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.KulturaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Kultura;
@@ -33,14 +34,14 @@ public class KulturaService {
 		return kulturaRepository.findById(id).map(kulturaMapper::toDto).orElse(null);
 	}
 
-	public KulturaDto save(@Valid KulturaDto dto) {
+	public KulturaDto save( KulturaDto dto) {
 		Kultura kultura = kulturaMapper.toEntity(dto);
 		Kultura saved = kulturaRepository.save(kultura);
 
 		return kulturaMapper.toDto(saved);
 	}
 
-	public KulturaDto update(Long id, @Valid KulturaDto dto) {
+	public KulturaDto update(Long id,  KulturaDto dto) {
 		return kulturaRepository.findById(id).map(existing -> {
 			existing.setNaziv(dto.getNaziv());
 			existing.setSorta(dto.getSorta());
@@ -49,12 +50,14 @@ public class KulturaService {
 			return kulturaMapper.toDto(saved);
 		}).orElse(null);
 	}
-
-	public boolean delete(Long id) {
-		return kulturaRepository.findById(id).map(entity -> {
-			kulturaRepository.delete(entity);
-			return true;
-		}).orElse(false);
+	
+	public void delete(Long id) {
+		var kultura=kulturaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(
+	            "Parcela sa id=" + id + " ne postoji"
+	        ));
+		
+		kulturaRepository.delete(kultura);
+		
 	}
-
+	
 }
