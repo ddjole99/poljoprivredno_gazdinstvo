@@ -16,49 +16,65 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 
 	@Override
 	public SetvaDto toDto(Setva e) {
-		if (e == null)
-			return null;
+		if (e == null) return null;
 
-		SetvaDto dto = new SetvaDto();
-		dto.setSetvaID(e.getSetvaID());
-		dto.setAdministratorID(e.getAdministrator() != null ? e.getAdministrator().getAdministratorID() : null);
-		dto.setAdministratorID(e.getParcela() != null ? e.getParcela().getParcelaID() : null);
-		dto.setAdministratorID(e.getKultura() != null ? e.getKultura().getKulturaID() : null);
-		dto.setDatumPocetka(e.getDatumPocetka());
-		dto.setDatumZavrsetka(e.getDatumZavrsetka());
-		dto.setStatus(e.getStatus());
-		dto.setStavkeSetve(e.getStavkeSetve().stream()
-				.map(s -> new StavkaSetveDto(s.getId(), s.getDatum(), s.getAktivnost().getAktivnostID(), s.getCena()))
-				.toList());
-		
-		return dto;
+	    SetvaDto dto = new SetvaDto();
+	    dto.setSetvaID(e.getSetvaID());
+	    dto.setAdministratorID(
+	        e.getAdministrator() != null ? e.getAdministrator().getAdministratorID() : null
+	    );
+	    dto.setParcelaID(
+	        e.getParcela() != null ? e.getParcela().getParcelaID() : null
+	    );
+	    dto.setKulturaID(
+	        e.getKultura() != null ? e.getKultura().getKulturaID() : null
+	    );
+	    dto.setDatumPocetka(e.getDatumPocetka());
+	    dto.setDatumZavrsetka(e.getDatumZavrsetka());
+	    dto.setStatus(e.getStatus());
+
+	    dto.setStavkeSetve(
+	        e.getStavkeSetve().stream()
+	            .map(s -> new StavkaSetveDto(
+	                s.getId(),
+	                s.getDatum(),
+	                s.getAktivnost().getAktivnostID(),
+	                s.getCena()
+	            ))
+	            .toList()
+	    );
+
+	    return dto;
 	}
 
 	@Override
-	public Setva toEntity(SetvaDto t) {
-		if (t == null)
-			return null;
+	public Setva toEntity(SetvaDto dto) {
+		if (dto == null) return null;
 
-		Setva s = new Setva();
-		s.setSetvaID(t.getSetvaID());
-		s.setDatumPocetka(t.getDatumPocetka());
-		s.setDatumZavrsetka(t.getDatumZavrsetka());
-		s.setStatus(t.getStatus());
+        Setva setva = new Setva();
+        setva.setSetvaID(dto.getSetvaID());
+        setva.setDatumPocetka(dto.getDatumPocetka());
+        setva.setDatumZavrsetka(dto.getDatumZavrsetka());
+        setva.setStatus(dto.getStatus());
 
-		s.setParcela(new Parcela(t.getParcelaID()));
-		s.setKultura(new Kultura(t.getKulturaID()));
+        if (dto.getStavkeSetve() != null) {
+            for (StavkaSetveDto sDto : dto.getStavkeSetve()) {
+                StavkaSetve st = new StavkaSetve();
 
-		s.setStavkeSetve(t.getStavkeSetve().stream().map(st->{
-			StavkaSetve stavka=new StavkaSetve();
-			stavka.setId(st.getId());
-			stavka.setCena(st.getCena());
-			stavka.setDatum(st.getDatum());
-			stavka.setAktivnost(new Aktivnost(st.getAktivnostID()));
-			stavka.setSetva(s);
-			return stavka;
-		}).toList());
-		
-		return s;
+                st.setId(sDto.getId());
+                st.setDatum(sDto.getDatum());
+                st.setCena(sDto.getCena());
+
+                if (sDto.getAktivnostID() != null) {
+                    st.setAktivnost(new Aktivnost(sDto.getAktivnostID()));
+                }
+
+                st.setSetva(setva);
+                setva.getStavkeSetve().add(st);
+            }
+        }
+
+        return setva;
 	}
 
 }
