@@ -91,6 +91,6 @@ public class Aktivnost {
 		Aktivnost other = (Aktivnost) obj;
 		return Objects.equals(aktivnostID, other.aktivnostID);
 	}
-	
 
+	
 }

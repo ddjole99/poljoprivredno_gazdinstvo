@@ -70,6 +70,7 @@ public class Administrator {
 		this.passwordHash = passwordHash;
 	}
 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(email, passwordHash);
@@ -85,6 +86,11 @@ public class Administrator {
 			return false;
 		Administrator other = (Administrator) obj;
 		return Objects.equals(email, other.email) && Objects.equals(passwordHash, other.passwordHash);
+	}
+
+	@Override
+	public String toString() {
+		return "Administrator [email=" + email + ", username=" + username + "]";
 	}
 
 	
