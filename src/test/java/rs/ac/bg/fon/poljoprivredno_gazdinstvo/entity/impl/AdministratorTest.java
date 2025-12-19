@@ -10,69 +10,65 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class AdministratorTest {
 
-    private Administrator administrator;
+	private Administrator administrator;
 
-    @BeforeEach
-    void setUp() {
-        administrator = new Administrator();
-    }
+	@BeforeEach
+	void setUp() {
+		administrator = new Administrator();
+	}
 
-    @AfterEach
-    void tearDown() {
-        administrator = null;
-    }
+	@AfterEach
+	void tearDown() {
+		administrator = null;
+	}
 
-    @Test
-    void testSetAdministrator() {
-        administrator.setAdministratorID(1L);
-        assertEquals(1L, administrator.getAdministratorID());
-    }
+	@Test
+	void testSetAdministrator() {
+		administrator.setAdministratorID(1L);
+		assertEquals(1L, administrator.getAdministratorID());
+	}
 
-    @Test
-    void testSetEmail() {
-        administrator.setEmail("djordje@example.com");
-        assertEquals("djordje@example.com", administrator.getEmail());
-    }
+	@Test
+	void testSetEmail() {
+		administrator.setEmail("djordje@example.com");
+		assertEquals("djordje@example.com", administrator.getEmail());
+	}
 
-    @Test
-    void testSetUsername() {
-        administrator.setUsername("djordje");
-        assertEquals("djordje", administrator.getUsername());
-    }
+	@Test
+	void testSetUsername() {
+		administrator.setUsername("djordje");
+		assertEquals("djordje", administrator.getUsername());
+	}
 
-    @Test
-    void testSetPasswordHash() {
-        administrator.setPasswordHash("djordje1234");
-        assertEquals("djordje1234", administrator.getPasswordHash());
-    }
-    
-    @Test
-    void testToString() {
-        administrator.setEmail("djordje@test.com");
-        administrator.setUsername("djordje");
+	@Test
+	void testSetPasswordHash() {
+		administrator.setPasswordHash("djordje1234");
+		assertEquals("djordje1234", administrator.getPasswordHash());
+	}
 
-        assertTrue(administrator.toString().contains("djordje@test.com"));
-        assertTrue(administrator.toString().contains("djordje"));
-    }
+	@Test
+	void testToString() {
+		administrator.setEmail("djordje@test.com");
+		administrator.setUsername("djordje");
 
-    @ParameterizedTest
-    @CsvSource({
-    	"admin@test.com, hash123, admin@test.com, hash123, true",
-    	"admin@test.com, hash123, admin2@test.com, hash123, false",
-    	"admin@test.com, hash123, admin@test.com, hash999, false",
-    	"admin@test.com, hash123, admin2@test.com, hash999, false"
-    })
-    void equalsTest(String email1, String password,
-                    String email2, String password2,
-                    boolean ocekivano) {
+		assertTrue(administrator.toString().contains("djordje@test.com"));
+		assertTrue(administrator.toString().contains("djordje"));
+	}
 
-        administrator.setEmail(email1);
-        administrator.setPasswordHash(password);
+	@ParameterizedTest
+	@CsvSource({ "admin@test.com, hash123, admin@test.com, hash123, true",
+			"admin@test.com, hash123, admin2@test.com, hash123, false",
+			"admin@test.com, hash123, admin@test.com, hash999, false",
+			"admin@test.com, hash123, admin2@test.com, hash999, false" })
+	void equalsTest(String email1, String password, String email2, String password2, boolean ocekivano) {
 
-        Administrator a2 = new Administrator();
-        a2.setEmail(email2);
-        a2.setPasswordHash(password2);
+		administrator.setEmail(email1);
+		administrator.setPasswordHash(password);
 
-        assertEquals(ocekivano, administrator.equals(a2));
-    }
+		Administrator a2 = new Administrator();
+		a2.setEmail(email2);
+		a2.setPasswordHash(password2);
+
+		assertEquals(ocekivano, administrator.equals(a2));
+	}
 }
