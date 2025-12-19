@@ -10,6 +10,26 @@ import org.springframework.web.server.ResponseStatusException;
 
 import jakarta.persistence.EntityNotFoundException;
 
+/**
+ * Globalni handler za obradu izuzetaka u REST sloju aplikacije.
+ * <p>
+ * Ova klasa centralizuje obradu izuzetaka koji nastaju u kontrolerima
+ * i servisnom sloju, i mapira ih na odgovarajuće HTTP odgovore
+ * u standardizovanom JSON formatu.
+ * </p>
+ *
+ * <p>
+ * Svi odgovori o grešci imaju sledeću strukturu:
+ * </p>
+ * <pre>
+ * {
+ *   "message": "opis greške"
+ * }
+ * </pre>
+ *
+ * @see org.springframework.web.bind.annotation.RestControllerAdvice
+ * @see org.springframework.web.bind.annotation.ExceptionHandler
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

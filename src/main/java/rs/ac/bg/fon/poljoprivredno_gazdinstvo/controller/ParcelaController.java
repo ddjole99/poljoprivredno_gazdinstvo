@@ -18,6 +18,25 @@ import jakarta.validation.Valid;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.ParcelaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.ParcelaService;
 
+/**
+ * REST kontroler za upravljanje parcelama.
+ * <p>
+ * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * <ul>
+ *   <li>prikaz svih parcela</li>
+ *   <li>prikaz parcele po identifikatoru</li>
+ *   <li>kreiranje nove parcele</li>
+ *   <li>ažuriranje postojeće parcele</li>
+ *   <li>brisanje parcele</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/parcele}.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.ParcelaService
+ */
 @RestController
 @RequestMapping("/api/parcele")
 
@@ -30,11 +49,24 @@ public class ParcelaController {
 		this.parcelaService = parcelaService;
 	}
 
+	/**
+     * Vraća listu svih parcela u sistemu.
+     *
+     * @return {@link ResponseEntity} sa listom {@link ParcelaDto} objekata
+     *         i HTTP statusom {@code 200 OK}
+     */
 	@GetMapping
 	public ResponseEntity<List<ParcelaDto>> getAll(){
 		return new ResponseEntity<List<ParcelaDto>>(parcelaService.findAll(), HttpStatus.OK);
 	}
 	
+	/**
+     * Vraća parcelu na osnovu njenog identifikatora.
+     *
+     * @param id jedinstveni identifikator parcele
+     * @return {@link ResponseEntity} sa {@link ParcelaDto} ako parcela postoji,
+     *         ili HTTP status {@code 404 Not Found} ako ne postoji
+     */
 	@GetMapping("/{id}")
 	public ResponseEntity<ParcelaDto> getByid(@PathVariable Long id){
 		var parcelaDto=parcelaService.findById(id);
@@ -45,6 +77,13 @@ public class ParcelaController {
 		return ResponseEntity.ok(parcelaDto);
 	}
 	
+	/**
+     * Kreira novu parcelu u sistemu.
+     *
+     * @param dto DTO objekat sa podacima o parceli
+     * @return {@link ResponseEntity} sa kreiranom {@link ParcelaDto}
+     *         i HTTP statusom {@code 201 Created}
+     */
 	@PostMapping
 	public ResponseEntity<ParcelaDto> createParcela(@Valid @RequestBody ParcelaDto dto){
 		ParcelaDto created = parcelaService.save(dto);
@@ -52,6 +91,14 @@ public class ParcelaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(created);
 	}
 	
+	 /**
+     * Ažurira postojeću parcelu.
+     *
+     * @param id  jedinstveni identifikator parcele
+     * @param dto DTO objekat sa izmenjenim podacima o parceli
+     * @return {@link ResponseEntity} sa ažuriranom {@link ParcelaDto}
+     *         i HTTP statusom {@code 200 OK}
+     */
 	@PutMapping("/{id}")
 	public ResponseEntity<ParcelaDto> updateParcela(@Valid @RequestBody ParcelaDto dto, @PathVariable Long id){
 		ParcelaDto updated=parcelaService.update(dto, id);
@@ -59,6 +106,12 @@ public class ParcelaController {
 		return ResponseEntity.ok(updated);
 	}
 
+	 /**
+     * Briše parcelu iz sistema.
+     *
+     * @param id jedinstveni identifikator parcele
+     * @return {@link ResponseEntity} bez tela odgovora i HTTP statusom {@code 200 OK}
+     */
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteParcela(@PathVariable Long id){
 		parcelaService.delete(id);
