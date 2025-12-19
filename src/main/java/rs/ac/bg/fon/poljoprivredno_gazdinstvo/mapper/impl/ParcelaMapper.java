@@ -7,9 +7,29 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Parcela;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipZemljista;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+/**
+ * Mapper za konverziju između {@link Parcela} entiteta i {@link ParcelaDto}.
+ * <p>
+ * Ova klasa implementira generički {@link DtoEntityMapper} interfejs
+ * i obezbeđuje mapiranje osnovnih podataka o parceli između
+ * domenskog i DTO sloja. Tip zemljišta se u DTO sloju predstavlja
+ * putem identifikatora.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipZemljista
+ */
 @Component
 public class ParcelaMapper implements DtoEntityMapper<ParcelaDto, Parcela> {
 
+	/**
+     * {@inheritDoc}
+     *
+     * <p>
+     * Tip zemljišta se mapira u DTO kao identifikator
+     * {@link TipZemljista#getTipZemljistaID()}.
+     * </p>
+     */
 	@Override
 	public ParcelaDto toDto(Parcela e) {
 
@@ -20,6 +40,14 @@ public class ParcelaMapper implements DtoEntityMapper<ParcelaDto, Parcela> {
 				e.getTipZemljista().getTipZemljistaID());
 	}
 
+	 /**
+     * {@inheritDoc}
+     *
+     * <p>
+     * Tip zemljišta se mapira iz identifikatora DTO-a u entitet
+     * korišćenjem pomoćnog konstruktora {@link TipZemljista#TipZemljista(Long)}.
+     * </p>
+     */
 	@Override
 	public Parcela toEntity(ParcelaDto t) {
 

@@ -6,9 +6,22 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.KulturaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Kultura;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+/**
+ * Mapper za konverziju između {@link Kultura} entiteta i {@link KulturaDto}.
+ * <p>
+ * Ova klasa implementira generički {@link DtoEntityMapper} interfejs
+ * i obezbeđuje mapiranje osnovnih atributa poljoprivredne kulture
+ * između domenskog i DTO sloja.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
+ */
 @Component
 public class KulturaMapper implements DtoEntityMapper<KulturaDto, Kultura>{
 
+	 /**
+     * {@inheritDoc}
+     */
 	@Override
 	public KulturaDto toDto(Kultura e) {
 		
@@ -18,6 +31,9 @@ public class KulturaMapper implements DtoEntityMapper<KulturaDto, Kultura>{
 		return new KulturaDto(e.getKulturaID(), e.getNaziv(), e.getSorta());
 	}
 
+	/**
+     * {@inheritDoc}
+     */
 	@Override
 	public Kultura toEntity(KulturaDto t) {
 		

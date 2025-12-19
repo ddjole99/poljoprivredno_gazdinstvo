@@ -11,9 +11,43 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+/**
+ * Mapper za konverziju između {@link Setva} entiteta i {@link SetvaDto}.
+ * <p>
+ * Ova klasa mapira složeni agregat {@code Setva}, uključujući:
+ * <ul>
+ *   <li>osnovne podatke o setvi (datumi, status)</li>
+ *   <li>reference na administratora, parcelu i kulturu (putem ID-jeva)</li>
+ *   <li>listu stavki setve koje predstavljaju izvršene aktivnosti</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * Mapper je registrovan kao Spring bean pomoću anotacije {@link Component}
+ * i koristi se u servisnom sloju aplikacije.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve
+ */
 @Component
 public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 
+	/**
+     * {@inheritDoc}
+     *
+     * <p>
+     * Prilikom mapiranja:
+     * <ul>
+     *   <li>reference na administratora, parcelu i kulturu mapiraju se
+     *       u DTO kao njihovi identifikatori</li>
+     *   <li>svaka {@link StavkaSetve} se mapira u {@link StavkaSetveDto}</li>
+     *   <li>ako neka referenca nije postavljena, odgovarajući ID u DTO-u
+     *       će biti {@code null}</li>
+     * </ul>
+     * </p>
+     */
 	@Override
 	public SetvaDto toDto(Setva e) {
 		if (e == null) return null;
@@ -47,6 +81,24 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 	    return dto;
 	}
 
+	/**
+     * {@inheritDoc}
+     *
+     * <p>
+     * Prilikom mapiranja iz DTO-a u entitet:
+     * <ul>
+     *   <li>kreira se nova instanca {@link Setva}</li>
+     *   <li>svaka {@link StavkaSetveDto} se mapira u {@link StavkaSetve}</li>
+     *   <li>svaka stavka se povezuje sa roditeljskom setvom</li>
+     *   <li>aktivnost se mapira korišćenjem njenog identifikatora</li>
+     * </ul>
+     * </p>
+     *
+     * <p>
+     * Reference na administratora, parcelu i kulturu se ne postavljaju
+     * direktno u ovoj metodi, već se obično dodaju u servisnom sloju.
+     * </p>
+     */
 	@Override
 	public Setva toEntity(SetvaDto dto) {
 		if (dto == null) return null;

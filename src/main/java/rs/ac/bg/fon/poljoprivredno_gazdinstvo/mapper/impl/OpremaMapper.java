@@ -6,9 +6,22 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.OpremaDto;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Oprema;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
+/**
+ * Mapper za konverziju između {@link Oprema} entiteta i {@link OpremaDto}.
+ * <p>
+ * Ova klasa implementira generički {@link DtoEntityMapper} interfejs
+ * i obezbeđuje mapiranje osnovnih atributa opreme između
+ * domenskog i DTO sloja.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
+ */
 @Component
 public class OpremaMapper implements DtoEntityMapper<OpremaDto, Oprema>{
 
+	/**
+     * {@inheritDoc}
+     */
 	@Override
 	public OpremaDto toDto(Oprema e) {
 		if(e==null)
@@ -16,6 +29,9 @@ public class OpremaMapper implements DtoEntityMapper<OpremaDto, Oprema>{
 		return new OpremaDto(e.getOpremaID(), e.getNaziv(), e.getTipOpreme());
 	}
 
+	/**
+     * {@inheritDoc}
+     */
 	@Override
 	public Oprema toEntity(OpremaDto t) {
 		if(t==null)
