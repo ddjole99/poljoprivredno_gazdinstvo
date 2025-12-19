@@ -15,15 +15,15 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<?> handleNotFound(EntityNotFoundException ex) {
-		return ResponseEntity.status(404).body(Map.of("message", ex.getMessage()));
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", ex.getMessage()));
 	}
 	
 	@ExceptionHandler(ResponseStatusException.class)
 	public ResponseEntity<?> handleStatusEx(ResponseStatusException ex) {
-		return ResponseEntity.status(404).body(Map.of("message", ex.getMessage()));
+		return ResponseEntity.status(ex.getStatusCode()).body(Map.of("message", ex.getMessage()));
 	}
 	
-	public ResponseEntity<Void> handleBadCredentialsException(){
-		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+	public ResponseEntity<?> handleBadCredentialsException(){
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("mesage","Neispravni kredencijali"));
 	}
 }

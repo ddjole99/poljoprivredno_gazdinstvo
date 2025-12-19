@@ -10,60 +10,54 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class KulturaTest {
 
-    private Kultura kultura;
+	private Kultura kultura;
 
-    @BeforeEach
-    void setUp() {
-        kultura = new Kultura();
-    }
+	@BeforeEach
+	void setUp() {
+		kultura = new Kultura();
+	}
 
-    @AfterEach
-    void tearDown() {
-        kultura = null;
-    }
+	@AfterEach
+	void tearDown() {
+		kultura = null;
+	}
 
-    @Test
-    void testSetKultura() {
-        kultura.setKulturaID(1L);
-        assertEquals(1L, kultura.getKulturaID());
-    }
+	@Test
+	void testSetKultura() {
+		kultura.setKulturaID(1L);
+		assertEquals(1L, kultura.getKulturaID());
+	}
 
-    @Test
-    void testSetNaziv() {
-        kultura.setNaziv("Kukuruz");
-        assertEquals("Kukuruz", kultura.getNaziv());
-    }
+	@Test
+	void testSetNaziv() {
+		kultura.setNaziv("Kukuruz");
+		assertEquals("Kukuruz", kultura.getNaziv());
+	}
 
+	@Test
+	void testSetSorta() {
+		kultura.setSorta("AS180");
+		assertEquals("AS180", kultura.getSorta());
+	}
 
-    @Test
-    void testSetSorta() {
-        kultura.setSorta("AS180");
-        assertEquals("AS180", kultura.getSorta());
-    }
+	@Test
+	void testToString() {
+		kultura.setNaziv("Kukuruz");
+		kultura.setSorta("AS180");
 
-    @Test
-    void testToString() {
-        kultura.setNaziv("Kukuruz");
-        kultura.setSorta("AS180");
+		assertTrue(kultura.toString().contains("Kukuruz"));
+		assertTrue(kultura.toString().contains("AS180"));
+	}
 
+	@ParameterizedTest
+	@CsvSource({ "1, 1, true", "1, 2, false", })
+	void equalsTest(Long id1, Long id2, boolean ocekivano) {
+		kultura.setKulturaID(id1);
 
-        assertTrue(kultura.toString().contains("Kukuruz"));
-        assertTrue(kultura.toString().contains("AS180"));
-    }
+		Kultura k2 = new Kultura();
+		k2.setKulturaID(id2);
 
-    @ParameterizedTest
-    @CsvSource({
-        "1, 1, true",
-        "1, 2, false",
-    })
-    void equalsTest(Long id1, Long id2, boolean ocekivano) {
-        kultura.setKulturaID(id1);
-
-        Kultura k2 = new Kultura();
-        k2.setKulturaID(id2);
-
-        assertEquals(ocekivano, kultura.equals(k2));
-    }
-
+		assertEquals(ocekivano, kultura.equals(k2));
+	}
 
 }
