@@ -8,17 +8,42 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * DTO za prijavu administratora na sistem.
+ * <p>
+ * Ovaj objekat se koristi kao telo zahteva prilikom autentifikacije
+ * administratora putem REST API-ja. Sadrži kredencijale potrebne
+ * za proveru identiteta korisnika.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Administrator
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class AdministratorLoginRequest {
 
+	/**
+     * Email adresa administratora.
+     * <p>
+     * Polje je obavezno, mora biti u validnom email formatu i
+     * može imati najviše 50 karaktera.
+     * </p>
+     */
 	@NotBlank(message = "Email je obavezan")
 	@Email(message = "Email nije validan")
 	@Size(max = 50, message = "Email moze imati najvise 50 karaktera")
 	private String email;
 	
+	 /**
+     * Lozinka administratora u nešifrovanom obliku.
+     * <p>
+     * Polje je obavezno i mora imati najmanje 8 karaktera.
+     * Lozinka se koristi isključivo za autentifikaciju i
+     * neće biti direktno čuvana u sistemu.
+     * </p>
+     */
 	@NotBlank(message = "Lozinka je obavezna")
 	@Size(min = 8, message = "Lozinka mora imati 6 karaktera")
 	private String password;
