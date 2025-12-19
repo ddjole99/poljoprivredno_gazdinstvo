@@ -18,6 +18,26 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.ChangePasswordRequest;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.AdministratorMapper;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AdministratorRepository;
 
+/**
+ * Servisni sloj za upravljanje administratorima sistema.
+ * <p>
+ * Ova klasa sadrži poslovnu logiku vezanu za:
+ * <ul>
+ *   <li>upravljanje administratorima</li>
+ *   <li>validaciju jedinstvenosti email adrese i korisničkog imena</li>
+ *   <li>bezbedno čuvanje i izmenu lozinki</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * Servis koristi {@link AdministratorRepository} za pristup bazi podataka
+ * i {@link AdministratorMapper} za mapiranje između entiteta i DTO objekata.
+ * </p>
+ *
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AdministratorRepository
+ * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.AdministratorMapper
+ * @see org.springframework.security.crypto.password.PasswordEncoder
+ */
 @AllArgsConstructor
 @Service
 public class AdministratorService {
@@ -26,14 +46,39 @@ public class AdministratorService {
 	private final AdministratorMapper administratorMapper;
 	private final PasswordEncoder passwordEncoder;
 
+	/**
+     * Vraća listu svih administratora u sistemu.
+     *
+     * @return lista {@link AdministratorDto} objekata
+     */
 	public List<AdministratorDto> findAll() {
 		return administratorRepository.findAll().stream().map(administratorMapper::toDto).toList();
 	}
 
+	/**
+     * Pronalazi administratora na osnovu identifikatora.
+     *
+     * @param id jedinstveni identifikator administratora
+     * @return {@link AdministratorDto} administrator postoji,
+     *         ili {@code null}  administrator ne postoji
+     */
 	public AdministratorDto findById(Long id) {
 		return administratorRepository.findById(id).map(administratorMapper::toDto).orElse(null);
 	}
 
+	/**
+     * Kreira novog administratora u sistemu.
+     * <p>
+     * Metoda proverava jedinstvenost email adrese i korisničkog imena,
+     * a lozinku bezbedno hešira pre čuvanja.
+     * </p>
+     *
+     * @param req zahtev za kreiranje administratora
+     * @return {@link AdministratorDto} kreiranog administratora
+     *
+     * @throws org.springframework.web.server.ResponseStatusException
+     *         sa statusom {@code 400 BAD_REQUEST} ako email ili korisničko ime već postoje
+     */
 	public AdministratorDto create(@Valid AdministratorCreateRequest req) {
 		if (administratorRepository.existsByEmail(req.getEmail())) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email je vec registrovan");
@@ -51,6 +96,18 @@ public class AdministratorService {
 		return administratorMapper.toDto(saved);
 	}
 
+	/**
+     * Ažurira podatke postojećeg administratora.
+     *
+     * @param req zahtev za izmenu administratora
+     * @param id  jedinstveni identifikator administratora
+     * @return {@link AdministratorDto} ažuriranog administratora
+     *
+     * @throws jakarta.persistence.EntityNotFoundException
+     *         ako administrator sa zadatim ID-jem ne postoji
+     * @throws org.springframework.web.server.ResponseStatusException
+     *         sa statusom {@code 400 BAD_REQUEST} ako je email ili korisničko ime zauzeto
+     */
 	public AdministratorDto update(@Valid AdministratorUpdateRequest req, Long id) {
 		var existing = administratorRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Administrator sa id=" + id + " ne postoji"));
@@ -69,6 +126,14 @@ public class AdministratorService {
 		return administratorMapper.toDto(saved);
 	}
 
+	 /**
+     * Briše administratora iz sistema.
+     *
+     * @param id jedinstveni identifikator administratora
+     *
+     * @throws jakarta.persistence.EntityNotFoundException
+     *         ako administrator sa zadatim ID-jem ne postoji
+     */
 	public void delete(Long id) {
 		var existing=administratorRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Administrator sa id="+id+" ne postoji"));
 		
