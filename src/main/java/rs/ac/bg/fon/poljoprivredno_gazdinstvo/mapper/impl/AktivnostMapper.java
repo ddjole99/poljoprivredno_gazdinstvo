@@ -12,11 +12,11 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
 /**
  * Mapper za konverziju između {@link Aktivnost} entiteta i {@link AktivnostDto}.
- * <p>
+ * 
  * Ova implementacija mapira osnovna polja aktivnosti, kao i listu
  * povezane opreme, koja se u DTO sloju predstavlja kao lista
  * identifikatora opreme.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
  */
@@ -26,11 +26,11 @@ public class AktivnostMapper implements DtoEntityMapper<AktivnostDto, Aktivnost>
 	/**
      * {@inheritDoc}
      *
-     * <p>
+     * 
      * Lista opreme se mapira u listu identifikatora opreme.
      * Tip aktivnosti se mapira u {@code String} korišćenjem
      * {@link Enum#name()} metode.
-     * </p>
+     *
      */
 	@Override
 	public AktivnostDto toDto(Aktivnost e) {
@@ -44,14 +44,14 @@ public class AktivnostMapper implements DtoEntityMapper<AktivnostDto, Aktivnost>
 	/**
      * {@inheritDoc}
      *
-     * <p>
+     *
      * Tip aktivnosti se mapira iz {@code String} vrednosti DTO-a
-     * u {@link TipAktivnosti} enum korišćenjem metode
+     * u {@link TipAktivnosti} enum koriscenjem metode
      * {@link TipAktivnosti#valueOf(String)}.
-     * </p>
+     * 
      *
      * @throws java.lang.IllegalArgumentException
-     *         ako prosleđeni naziv tipa aktivnosti ne odgovara
+     *         ako prosledjeni naziv tipa aktivnosti ne odgovara
      *         nijednoj vrednosti {@link TipAktivnosti} enuma
      */
 	@Override

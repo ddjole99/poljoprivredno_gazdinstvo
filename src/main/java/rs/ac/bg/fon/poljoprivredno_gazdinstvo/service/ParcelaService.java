@@ -17,20 +17,19 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.TipZemljistaRepository;
 
 /**
  * Servisni sloj za upravljanje parcelama.
- * <p>
- * Ova klasa sadrži poslovnu logiku vezanu za:
+ *
+ * Ova klasa sadrzi poslovnu logiku vezanu za:
  * <ul>
  *   <li>upravljanje parcelama</li>
  *   <li>povezivanje parcele sa tipom zemljišta</li>
  *   <li>validaciju postojanja povezanih entiteta</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
  * Servis koristi {@link ParcelaRepository} za pristup bazi podataka,
  * {@link TipZemljistaRepository} za validaciju tipa zemljišta i
  * {@link ParcelaMapper} za mapiranje između entiteta i DTO objekata.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.ParcelaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.TipZemljistaRepository
@@ -68,16 +67,16 @@ public class ParcelaService {
 
 	/**
      * Kreira novu parcelu u sistemu.
-     * <p>
-     * Metoda proverava da li prosleđeni tip zemljišta postoji
-     * pre nego što sačuva parcelu.
-     * </p>
+     * 
+     * Metoda proverava da li prosledjeni tip zemljista postoji
+     * pre nego sto sacuva parcelu.
+     * 
      *
      * @param dto DTO objekat sa podacima o parceli
      * @return {@link ParcelaDto} kreirane parcele
      *
      * @throws jakarta.persistence.EntityNotFoundException
-     *         ako tip zemljišta ne postoji
+     *         ako tip zemljista ne postoji
      */
 	public ParcelaDto save(ParcelaDto dto) {
 		
@@ -98,11 +97,11 @@ public class ParcelaService {
 
 
 	/**
-     * Ažurira postojeću parcelu.
+     * Azurira postojecu parcelu.
      *
      * @param dto DTO objekat sa izmenjenim podacima o parceli
      * @param id  jedinstveni identifikator parcele
-     * @return {@link ParcelaDto} ažuriranu parcelu
+     * @return {@link ParcelaDto} azuriranu parcelu
      *
      * @throws jakarta.persistence.EntityNotFoundException
      *         ako parcela ili tip zemljišta ne postoje
@@ -127,7 +126,7 @@ public class ParcelaService {
 
 
 	 /**
-     * Briše parcelu iz sistema.
+     * Brise parcelu iz sistema.
      *
      * @param id jedinstveni identifikator parcele
      *

@@ -11,18 +11,17 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.OpremaRepository;
 
 /**
  * Servisni sloj za upravljanje opremom u sistemu.
- * <p>
- * Ova klasa sadrži poslovnu logiku za:
+ * 
+ * Ova klasa sadrzi poslovnu logiku za:
  * <ul>
  *   <li>prikaz dostupne opreme</li>
- *   <li>pribavljanje pojedinačne opreme po identifikatoru</li>
+ *   <li>pribavljanje pojedinacne opreme po identifikatoru</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
  * Servis koristi {@link OpremaRepository} za pristup podacima
- * i {@link OpremaMapper} za mapiranje između entiteta i DTO objekata.
- * </p>
+ * i {@link OpremaMapper} za mapiranje izmedju entiteta i DTO objekata.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.OpremaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.OpremaMapper

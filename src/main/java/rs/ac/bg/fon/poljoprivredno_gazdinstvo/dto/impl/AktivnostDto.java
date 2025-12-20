@@ -43,29 +43,29 @@ public class AktivnostDto {
 	
 	/**
      * Tip aktivnosti.
-     * <p>
+     * 
      * Polje je obavezno i predstavlja kategoriju kojoj aktivnost pripada
      * (npr. obrada zemljišta, navodnjavanje, zaštita useva).
-     * </p>
+     * 
      */
 	@NotBlank(message = "Tip aktivnosti je obavezan")
 	private String tipAktivnosti;
 	
 	/**
      * Lista identifikatora opreme povezane sa aktivnošću.
-     * <p>
+     * 
      * Lista mora sadržati bar jedan identifikator opreme.
-     * </p>
+     * 
      */
 	@Size(min=1, message = "Morate izabrati bar jednu opremu")
 	private List<Long> opremaIDs;
 	
 	/**
      * Kreira DTO aktivnosti sa zadatim identifikatorom.
-     * <p>
+     * 
      * Konstruktor se koristi za referenciranje aktivnosti
      * samo putem njenog identifikatora.
-     * </p>
+     * 
      *
      * @param aktivnostID jedinstveni identifikator aktivnosti
      */

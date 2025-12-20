@@ -16,17 +16,17 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.OpremaService;
 
 /**
  * REST kontroler za upravljanje opremom.
- * <p>
- * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * 
+ * Ovaj kontroler obezbeđuje REST API krajnje tacke za:
  * <ul>
  *   <li>prikaz kompletne liste opreme</li>
- *   <li>prikaz pojedinačne opreme po identifikatoru</li>
+ *   <li>prikaz pojedinacne opreme po identifikatoru</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
+ * 
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/oprema}.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.OpremaService
  */
@@ -38,7 +38,7 @@ public class OpremaController {
 	private final OpremaService opremaService;
 
 	/**
-     * Vraća listu sve dostupne opreme u sistemu.
+     * Vraca listu sve dostupne opreme u sistemu.
      *
      * @return {@link ResponseEntity} sa listom {@link OpremaDto} objekata
      *         i HTTP statusom {@code 200 OK}
@@ -51,7 +51,7 @@ public class OpremaController {
 	}
 
 	/**
-     * Vraća opremu na osnovu njenog identifikatora.
+     * Vraca opremu na osnovu njenog identifikatora.
      *
      * @param id jedinstveni identifikator opreme
      * @return {@link ResponseEntity} sa {@link OpremaDto} ako oprema postoji,

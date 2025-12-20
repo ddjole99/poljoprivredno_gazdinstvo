@@ -12,11 +12,11 @@ import lombok.Setter;
 
 /**
  * DTO za prenos podataka o stavci setve.
- * <p>
+ * 
  * Ovaj DTO predstavlja jednu konkretnu aktivnost izvršenu u okviru
  * setve i sadrži podatke o datumu izvršenja, aktivnosti i ceni.
  * Koristi se kao deo {@link SetvaDto} objekta.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.SetvaDto
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve
@@ -34,9 +34,9 @@ public class StavkaSetveDto {
 	
 	/**
      * Datum izvršenja aktivnosti.
-     * <p>
+     * 
      * Datum ne sme biti u budućnosti.
-     * </p>
+     * 
      */
 	@NotNull(message = "Datum aktivnost je obavezan")
 	@PastOrPresent(message = "Datum atkivnosti ne sme biti u buducnosti")
@@ -51,9 +51,9 @@ public class StavkaSetveDto {
 	
 	/**
      * Cena aktivnosti izvršene u okviru stavke setve.
-     * <p>
+     * 
      * Vrednost mora biti pozitivna i veća od nule.
-     * </p>
+     * 
      */
 	@NotNull(message = "Cena aktivnosti je obavezna")
 	@Positive(message = "Cena mora biti veca od 0")

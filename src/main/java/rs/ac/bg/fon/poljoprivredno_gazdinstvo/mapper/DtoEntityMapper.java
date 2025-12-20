@@ -1,13 +1,13 @@
 package rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper;
 
 /**
- * Generički mapper interfejs za konverziju između DTO objekata i entiteta.
- * <p>
- * Ovaj interfejs definiše osnovni ugovor za mapiranje podataka
+ * Genericki mapper interfejs za konverziju između DTO objekata i entiteta.
+ * 
+ * Ovaj interfejs definise osnovni ugovor za mapiranje podataka
  * između sloja prenosa podataka (DTO) i domenskog modela (Entity).
  * Konkretne implementacije treba da obezbede mapiranje za određene
  * parove DTO–Entity klasa.
- * </p>
+ * 
  *
  * @param <T> tip DTO objekta
  * @param <E> tip entiteta

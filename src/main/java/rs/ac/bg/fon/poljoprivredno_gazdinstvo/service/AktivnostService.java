@@ -16,19 +16,18 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.OpremaRepository;
 
 /**
  * Servisni sloj za upravljanje aktivnostima u sistemu.
- * <p>
- * Ova klasa sadrži poslovnu logiku vezanu za:
+ * 
+ * Ova klasa sadrzi poslovnu logiku vezanu za:
  * <ul>
  *   <li>upravljanje aktivnostima</li>
  *   <li>dodelu opreme aktivnostima</li>
  *   <li>validaciju postojanja povezane opreme</li>
  * </ul>
- * </p>
  *
- * <p>
+ *
  * Servis koristi {@link AktivnostRepository} za pristup bazi podataka
- * i {@link AktivnostMapper} za mapiranje između entiteta i DTO objekata.
- * </p>
+ * i {@link AktivnostMapper} za mapiranje izmedju entiteta i DTO objekata.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AktivnostRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.AktivnostMapper
@@ -43,7 +42,7 @@ public class AktivnostService {
 	OpremaRepository opremaRepository;
 	
 	/**
-     * Vraća listu svih aktivnosti u sistemu.
+     * Vraca listu svih aktivnosti u sistemu.
      *
      * @return lista {@link AktivnostDto} objekata
      */
@@ -66,16 +65,15 @@ public class AktivnostService {
 
 	 /**
      * Kreira novu aktivnost u sistemu.
-     * <p>
+     * 
      * Metoda proverava da li sva oprema prosleđena u zahtevu
-     * postoji u sistemu pre nego što sačuva aktivnost.
-     * </p>
+     * postoji u sistemu pre nego sto sacuva aktivnost.
      *
      * @param dto DTO objekat sa podacima o aktivnosti
      * @return {@link AktivnostDto} kreirane aktivnosti
      *
      * @throws jakarta.persistence.EntityNotFoundException
-     *         ako jedna ili više stavki opreme ne postoje
+     *         ako jedna ili vise stavki opreme ne postoje
      */
 	public AktivnostDto save(AktivnostDto dto) {
 		var aktivnost = aktivnostMapper.toEntity(dto);
@@ -96,15 +94,15 @@ public class AktivnostService {
 
 
 	/**
-     * Ažurira postojeću aktivnost.
-     * <p>
-     * Metoda omogućava izmenu osnovnih podataka aktivnosti
-     * i ažuriranje liste dodeljene opreme.
-     * </p>
+     * Azurira postojecu aktivnost.
+     * 
+     * Metoda omogucava izmenu osnovnih podataka aktivnosti
+     * i azuriranje liste dodeljene opreme.
+     * 
      *
      * @param id  jedinstveni identifikator aktivnosti
      * @param dto DTO objekat sa izmenjenim podacima o aktivnosti
-     * @return {@link AktivnostDto} ažurirana aktivnost
+     * @return {@link AktivnostDto} azurirana aktivnost
      *
      * @throws jakarta.persistence.EntityNotFoundException
      *         ako aktivnost ili neka od stavki opreme ne postoji
@@ -134,7 +132,7 @@ public class AktivnostService {
 
 
 	/**
-     * Briše aktivnost iz sistema.
+     * Brise aktivnost iz sistema.
      *
      * @param id jedinstveni identifikator aktivnosti
      *

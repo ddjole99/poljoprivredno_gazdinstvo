@@ -20,20 +20,20 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.ParcelaService;
 
 /**
  * REST kontroler za upravljanje parcelama.
- * <p>
- * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * 
+ * Ovaj kontroler obezbedjuje REST API krajnje tacke za:
  * <ul>
  *   <li>prikaz svih parcela</li>
  *   <li>prikaz parcele po identifikatoru</li>
  *   <li>kreiranje nove parcele</li>
- *   <li>ažuriranje postojeće parcele</li>
+ *   <li>azuriranje postojece parcele</li>
  *   <li>brisanje parcele</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
+ *
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/parcele}.
- * </p>
+ *
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.ParcelaService
  */
@@ -96,7 +96,7 @@ public class ParcelaController {
      *
      * @param id  jedinstveni identifikator parcele
      * @param dto DTO objekat sa izmenjenim podacima o parceli
-     * @return {@link ResponseEntity} sa ažuriranom {@link ParcelaDto}
+     * @return {@link ResponseEntity} sa azuriranom {@link ParcelaDto}
      *         i HTTP statusom {@code 200 OK}
      */
 	@PutMapping("/{id}")

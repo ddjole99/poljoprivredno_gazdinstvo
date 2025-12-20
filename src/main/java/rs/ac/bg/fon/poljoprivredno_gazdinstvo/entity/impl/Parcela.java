@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 
 /**
  * Predstavlja parcelu poljoprivrednog zemljišta u okviru gazdinstva.
- * <p>
- * Parcela je definisana jedinstvenim nazivom, lokacijom, površinom i tipom
- * zemljišta. Svaka parcela ima tačno jedan tip zemljišta.
- * </p>
+ * 
+ * Parcela je definisana jedinstvenim nazivom, lokacijom, povrsinom i tipom
+ * zemljista. Svaka parcela ima tacno jedan tip zemljista.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipZemljista
  */
@@ -48,10 +48,10 @@ public class Parcela {
 
 	/**
      * Kreira parcelu sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojeće parcele bez učitavanja
+     * 
+     * Konstruktor se koristi za referenciranje postojece parcele bez ucitavanja
      * svih podataka.
-     * </p>
+     * 
      *
      * @param parcelaID jedinstveni identifikator parcele
      */
@@ -61,7 +61,7 @@ public class Parcela {
 	}
 
 	 /**
-     * Vraća jedinstveni identifikator parcele.
+     * Vraca jedinstveni identifikator parcele.
      *
      * @return identifikator parcele
      */
@@ -79,7 +79,7 @@ public class Parcela {
 	}
 
 	 /**
-     * Vraća naziv parcele.
+     * Vraca naziv parcele.
      *
      * @return naziv parcele
      */
@@ -97,7 +97,7 @@ public class Parcela {
 	}
 
 	/**
-     * Vraća lokaciju parcele.
+     * Vraca lokaciju parcele.
      *
      * @return lokacija parcele
      */
@@ -115,27 +115,27 @@ public class Parcela {
 	}
 
 	 /**
-     * Vraća površinu parcele izraženu u hektarima.
+     * Vraca povrsinu parcele izrazenu u hektarima.
      *
-     * @return površina parcele
+     * @return povrsina parcele
      */
 	public Double getPovrsina() {
 		return povrsina;
 	}
 
 	 /**
-     * Postavlja površinu parcele.
+     * Postavlja povrsinu parcele.
      *
-     * @param povrsina površina parcele u hektarima; mora biti pozitivna
+     * @param povrsina povrsina parcele u hektarima; mora biti pozitivna
      */
 	public void setPovrsina(Double povrsina) {
 		this.povrsina = povrsina;
 	}
 
 	/**
-     * Vraća tip zemljišta kome parcela pripada.
+     * Vraca tip zemljista kome parcela pripada.
      *
-     * @return tip zemljišta parcele
+     * @return tip zemljista parcele
      *
      * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.TipZemljista
      */
@@ -153,7 +153,7 @@ public class Parcela {
 	}
 
 	 /**
-     * Vraća tekstualni prikaz parcele.
+     * Vraca tekstualni prikaz parcele.
      *
      * @return string reprezentacija parcele
      */
@@ -164,7 +164,7 @@ public class Parcela {
 	}
 
 	/**
-     * Računa hash kod parcele na osnovu njenog identifikatora.
+     * Racuna hash kod parcele na osnovu njenog identifikatora.
      *
      * @return hash kod parcele
      */
@@ -178,7 +178,7 @@ public class Parcela {
      *
      * @param obj objekat sa kojim se poredi
      * @return {@code true}  objekti predstavljaju istu parcelu;
-     *         {@code false} objekti različiti
+     *         {@code false} objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

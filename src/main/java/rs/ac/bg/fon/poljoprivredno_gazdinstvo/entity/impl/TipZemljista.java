@@ -12,12 +12,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 /**
- * Predstavlja tip poljoprivrednog zemljišta.
- * <p>
- * Tip zemljišta opisuje osnovne karakteristike zemljišta, kao što su naziv,
+ * Predstavlja tip poljoprivrednog zemljista.
+ * 
+ * Tip zemljista opisuje osnovne karakteristike zemljista, kao što su naziv,
  * pH vrednost i nivo plodnosti, i koristi se za klasifikaciju parcela
  * u okviru poljoprivrednog gazdinstva.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Parcela
  */
@@ -38,94 +38,94 @@ public class TipZemljista {
 	private String plodnost;
 
 	/**
-     * Kreira tip zemljišta sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojećeg tipa zemljišta
-     * bez učitavanja kompletnih podataka.
-     * </p>
+     * Kreira tip zemljista sa zadatim identifikatorom.
      *
-     * @param tipZemljistaID jedinstveni identifikator tipa zemljišta
+     * Konstruktor se koristi za referenciranje postojeceg tipa zemljista
+     * bez ucitavanja kompletnih podataka.
+     * 
+     *
+     * @param tipZemljistaID jedinstveni identifikator tipa zemljista
      */
 	public TipZemljista(Long tipZemljistaID) {
 		this.tipZemljistaID = tipZemljistaID;
 	}
 
 	/**
-     * Vraća jedinstveni identifikator tipa zemljišta.
+     * Vraca jedinstveni identifikator tipa zemljista.
      *
-     * @return identifikator tipa zemljišta
+     * @return identifikator tipa zemljista
      */
 	public Long getTipZemljistaID() {
 		return tipZemljistaID;
 	}
 
 	/**
-     * Postavlja jedinstveni identifikator tipa zemljišta.
+     * Postavlja jedinstveni identifikator tipa zemljista.
      *
-     * @param tipZemljistaID identifikator tipa zemljišta
+     * @param tipZemljistaID identifikator tipa zemljista
      */
 	public void setTipZemljistaID(Long tipZemljistaID) {
 		this.tipZemljistaID = tipZemljistaID;
 	}
 
 	/**
-     * Vraća naziv tipa zemljišta.
+     * Vraca naziv tipa zemljista.
      *
-     * @return naziv tipa zemljišta
+     * @return naziv tipa zemljista
      */
 	public String getNaziv() {
 		return naziv;
 	}
 
 	/**
-     * Postavlja naziv tipa zemljišta.
+     * Postavlja naziv tipa zemljista.
      *
-     * @param naziv naziv tipa zemljišta
+     * @param naziv naziv tipa zemljista
      */
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
 	}
 
 	/**
-     * Vraća pH vrednost zemljišta.
+     * Vraca pH vrednost zemljista.
      *
-     * @return pH vrednost zemljišta
+     * @return pH vrednost zemljista
      */
 	public Double getPhVrednost() {
 		return phVrednost;
 	}
 
 	/**
-     * Postavlja pH vrednost zemljišta.
+     * Postavlja pH vrednost zemljista.
      *
-     * @param phVrednost pH vrednost zemljišta
+     * @param phVrednost pH vrednost zemljista
      */
 	public void setPhVrednost(Double phVrednost) {
 		this.phVrednost = phVrednost;
 	}
 
 	/**
-     * Vraća opis plodnosti zemljišta.
+     * Vraca opis plodnosti zemljista.
      *
-     * @return plodnost zemljišta
+     * @return plodnost zemljista
      */
 	public String getPlodnost() {
 		return plodnost;
 	}
 
 	 /**
-     * Postavlja opis plodnosti zemljišta.
+     * Postavlja opis plodnosti zemljista.
      *
-     * @param plodnost plodnost zemljišta
+     * @param plodnost plodnost zemljista
      */
 	public void setPlodnost(String plodnost) {
 		this.plodnost = plodnost;
 	}
 
 	 /**
-     * Vraća tekstualni prikaz tipa zemljišta.
+     * Vraca tekstualni prikaz tipa zemljista.
      *
-     * @return naziv tipa zemljišta
+     * @return naziv tipa zemljista
      */
 	@Override
 	public String toString() {
@@ -133,9 +133,9 @@ public class TipZemljista {
 	}
 
 	/**
-     * Računa hash kod tipa zemljišta na osnovu identifikatora.
+     * Racuna hash kod tipa zemljišta na osnovu identifikatora.
      *
-     * @return hash kod tipa zemljišta
+     * @return hash kod tipa zemljista
      */
 	@Override
 	public int hashCode() {
@@ -143,11 +143,11 @@ public class TipZemljista {
 	}
 
 	/**
-     * Poredi dva tipa zemljišta na osnovu identifikatora.
+     * Poredi dva tipa zemljista na osnovu identifikatora.
      *
      * @param obj objekat sa kojim se poredi
-     * @return {@code true} objekti predstavljaju isti tip zemljišta;
-     *         {@code false}objekti razičiti
+     * @return {@code true} objekti predstavljaju isti tip zemljista;
+     *         {@code false}objekti raziciti
      */
 	@Override
 	public boolean equals(Object obj) {

@@ -14,15 +14,15 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AdministratorRepository
 /**
  * Implementacija {@link UserDetailsService} interfejsa za potrebe
  * Spring Security autentifikacije administratora.
- * <p>
- * Ova klasa omogućava učitavanje podataka o administratoru na osnovu
- * email adrese, koja se koristi kao korisničko ime u sistemu.
- * </p>
+ * 
+ * Ova klasa omogucava ucitavanje podataka o administratoru na osnovu
+ * email adrese, koja se koristi kao korisnicko ime u sistemu.
+ * 
  *
- * <p>
+ * 
  * Spring Security automatski poziva metodu
  * {@link #loadUserByUsername(String)} tokom procesa autentifikacije.
- * </p>
+ * 
  *
  * @see org.springframework.security.core.userdetails.UserDetailsService
  * @see org.springframework.security.core.userdetails.User
@@ -35,15 +35,15 @@ public class AdminDetalisService implements UserDetailsService {
 	private final AdministratorRepository administratorRepository;
 
 	/**
-     * Učitava detalje administratora na osnovu email adrese.
-     * <p>
-     * Metoda se koristi u procesu autentifikacije i vraća objekat
-     * tipa {@link UserDetails} koji sadrži potrebne informacije
+     * Ucitava detalje administratora na osnovu email adrese.
+     * 
+     * Metoda se koristi u procesu autentifikacije i vraca objekat
+     * tipa {@link UserDetails} koji sadrzi potrebne informacije
      * za proveru identiteta korisnika.
-     * </p>
+     * 
      *
-     * @param email email adresa administratora koja se koristi kao korisničko ime
-     * @return {@link UserDetails} objekat koji sadrži email, heširanu lozinku
+     * @param email email adresa administratora koja se koristi kao korisnicko ime
+     * @return {@link UserDetails} objekat koji sadrži email, hesiranu lozinku
      *         i listu autorizacija (trenutno praznu)
      *
      * @throws org.springframework.security.core.userdetails.UsernameNotFoundException

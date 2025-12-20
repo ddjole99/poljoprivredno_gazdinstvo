@@ -16,19 +16,19 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.KulturaRepository;
 
 /**
  * Servisni sloj za upravljanje poljoprivrednim kulturama.
- * <p>
- * Ova klasa sadrži poslovnu logiku vezanu za:
+ *
+ * Ova klasa sadrzi poslovnu logiku vezanu za:
  * <ul>
  *   <li>upravljanje kulturama</li>
  *   <li>kreiranje, izmenu i brisanje kultura</li>
- *   <li>mapiranje između entiteta i DTO objekata</li>
+ *   <li>mapiranje izmedju entiteta i DTO objekata</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
+ * 
  * Servis koristi {@link KulturaRepository} za pristup bazi podataka
  * i {@link KulturaMapper} za mapiranje podataka.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.KulturaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.KulturaMapper
@@ -40,10 +40,10 @@ public class KulturaService {
 	private final KulturaMapper kulturaMapper;
 
 	 /**
-     * Kreira novi {@code KulturaService} sa prosleđenim zavisnostima.
+     * Kreira novi {@code KulturaService} sa prosledjenim zavisnostima.
      *
      * @param kulturaRepository repozitorijum za upravljanje kulturama
-     * @param kulturaMapper     mapper za konverziju između entiteta i DTO objekata
+     * @param kulturaMapper     mapper za konverziju izmedju entiteta i DTO objekata
      */
 	@Autowired
 	public KulturaService(KulturaRepository kulturaRepository, KulturaMapper kulturaMapper) {
@@ -52,7 +52,7 @@ public class KulturaService {
 	}
 
 	/**
-     * Vraća listu svih poljoprivrednih kultura u sistemu.
+     * Vraca listu svih poljoprivrednih kultura u sistemu.
      *
      * @return lista {@link KulturaDto} objekata
      */
@@ -85,11 +85,11 @@ public class KulturaService {
 	}
 
 	 /**
-     * Ažurira postojeću poljoprivrednu kulturu.
+     * Azurira postojecu poljoprivrednu kulturu.
      *
      * @param id  jedinstveni identifikator kulture
      * @param dto DTO objekat sa izmenjenim podacima o kulturi
-     * @return {@link KulturaDto} ažurirana kultura,
+     * @return {@link KulturaDto} azurirana kultura,
      *         ili {@code null} ako kultura ne postoji
      */
 	public KulturaDto update(Long id,  KulturaDto dto) {
@@ -103,7 +103,7 @@ public class KulturaService {
 	}
 	
 	 /**
-     * Briše poljoprivrednu kulturu iz sistema.
+     * Brise poljoprivrednu kulturu iz sistema.
      *
      * @param id jedinstveni identifikator kulture
      *

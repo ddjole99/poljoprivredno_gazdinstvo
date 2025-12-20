@@ -20,19 +20,19 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AdministratorRepository
 
 /**
  * Servisni sloj za upravljanje administratorima sistema.
- * <p>
+ * 
  * Ova klasa sadrži poslovnu logiku vezanu za:
  * <ul>
  *   <li>upravljanje administratorima</li>
- *   <li>validaciju jedinstvenosti email adrese i korisničkog imena</li>
- *   <li>bezbedno čuvanje i izmenu lozinki</li>
+ *   <li>validaciju jedinstvenosti email adrese i korisnickog imena</li>
+ *   <li>bezbedno cuvanje i izmenu lozinki</li>
  * </ul>
- * </p>
  *
- * <p>
+ *
+ * 
  * Servis koristi {@link AdministratorRepository} za pristup bazi podataka
  * i {@link AdministratorMapper} za mapiranje između entiteta i DTO objekata.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.AdministratorRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.AdministratorMapper
@@ -68,16 +68,16 @@ public class AdministratorService {
 
 	/**
      * Kreira novog administratora u sistemu.
-     * <p>
-     * Metoda proverava jedinstvenost email adrese i korisničkog imena,
-     * a lozinku bezbedno hešira pre čuvanja.
-     * </p>
+     * 
+     * Metoda proverava jedinstvenost email adrese i korisnickog imena,
+     * a lozinku bezbedno hesira pre cuvanja.
+     * 
      *
      * @param req zahtev za kreiranje administratora
      * @return {@link AdministratorDto} kreiranog administratora
      *
      * @throws org.springframework.web.server.ResponseStatusException
-     *         sa statusom {@code 400 BAD_REQUEST} ako email ili korisničko ime već postoje
+     *         sa statusom {@code 400 BAD_REQUEST} ako email ili korisnicko ime vec postoje
      */
 	public AdministratorDto create(@Valid AdministratorCreateRequest req) {
 		if (administratorRepository.existsByEmail(req.getEmail())) {
@@ -106,7 +106,7 @@ public class AdministratorService {
      * @throws jakarta.persistence.EntityNotFoundException
      *         ako administrator sa zadatim ID-jem ne postoji
      * @throws org.springframework.web.server.ResponseStatusException
-     *         sa statusom {@code 400 BAD_REQUEST} ako je email ili korisničko ime zauzeto
+     *         sa statusom {@code 400 BAD_REQUEST} ako je email ili korisnicko ime zauzeto
      */
 	public AdministratorDto update(@Valid AdministratorUpdateRequest req, Long id) {
 		var existing = administratorRepository.findById(id)

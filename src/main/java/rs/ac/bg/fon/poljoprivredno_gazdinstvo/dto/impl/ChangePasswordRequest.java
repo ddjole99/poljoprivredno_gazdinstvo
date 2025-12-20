@@ -25,20 +25,20 @@ public class ChangePasswordRequest {
 
 	 /**
      * Trenutna (stara) lozinka administratora.
-     * <p>
+     * 
      * Polje je obavezno i koristi se za proveru identiteta
      * pre promene lozinke.
-     * </p>
+     * 
      */
 	@NotBlank(message = "Stara lozinka je obavezna")
 	private String oldPassword;
 
 	/**
      * Nova lozinka administratora.
-     * <p>
+     * 
      * Polje je obavezno i mora imati najmanje 8 karaktera.
-     * Nova lozinka će biti heširana pre čuvanja u sistemu.
-     * </p>
+     * Nova lozinka ce biti hesirana pre cuvanja u sistemu.
+     * 
      */
 	@NotBlank(message = "Nova lozinka je obavezna")
 	@Size(min = 8, message = "Nova lozinka mora imati bar 8 karaktera")

@@ -21,18 +21,16 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.JwtService;
 
 /**
  * REST kontroler za autentifikaciju i registraciju administratora.
- * <p>
- * Ovaj kontroler obezbeđuje API krajnje tačke za:
+ * 
+ * Ovaj kontroler obezbedjuje API krajnje tacke za:
  * <ul>
  *   <li>registraciju administratora</li>
  *   <li>prijavu administratora i izdavanje JWT tokena</li>
  *   <li>validaciju JWT tokena</li>
  * </ul>
- * </p>
  *
- * <p>
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/auth}.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.JwtService
  * @see org.springframework.security.authentication.AuthenticationManager
@@ -51,10 +49,8 @@ public class AuthController {
 	
 	/**
      * Registruje novog administratora u sistemu.
-     * <p>
-     * U slučaju uspeha, vraća {@code 201 Created} i {@code Location} zaglavlje
+     * U slucaju uspeha, vraca {@code 201 Created} i {@code Location} zaglavlje
      * koje pokazuje na resurs kreiranog administratora.
-     * </p>
      *
      * @param req        zahtev za kreiranje administratora
      * @param uriBuilder builder za kreiranje URI-ja kreiranog resursa
@@ -72,12 +68,10 @@ public class AuthController {
 	}
 
 	/**
-     * Prijavljuje administratora i vraća JWT token.
-     * <p>
-     * Metoda vrši autentifikaciju korišćenjem email adrese i lozinke.
-     * Ako je autentifikacija uspešna, generiše se JWT token koji klijent
+     * Prijavljuje administratora i vraca JWT token.
+     * Metoda vrsi autentifikaciju koriscenjem email adrese i lozinke.
+     * Ako je autentifikacija uspesna, generise se JWT token koji klijent
      * koristi za autorizaciju narednih zahteva.
-     * </p>
      *
      * @param req zahtev za prijavu administratora (email i lozinka)
      * @return {@link ResponseEntity} sa {@link JwtResponse} i HTTP statusom {@code 200 OK}

@@ -13,12 +13,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 /**
- * Predstavlja opremu koja se koristi pri izvršavanju poljoprivrednih aktivnosti.
- * <p>
- * Oprema može biti povezana sa jednom ili više aktivnosti, a ista aktivnost
- * može koristiti više različitih komada opreme, što je modelovano
+ * Predstavlja opremu koja se koristi pri izvrsavanju poljoprivrednih aktivnosti.
+ * 
+ * Oprema moze biti povezana sa jednom ili vise aktivnosti, a ista aktivnost
+ * moze koristiti vise razlicitih komada opreme, sto je modelovano
  * many-to-many relacijom.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost
  */
@@ -39,7 +39,7 @@ public class Oprema {
 	private List<Aktivnost> aktivnosti = new ArrayList<Aktivnost>();
 
 	/**
-     * Vraća jedinstveni identifikator opreme.
+     * Vraca jedinstveni identifikator opreme.
      *
      * @return identifikator opreme
      */
@@ -57,7 +57,7 @@ public class Oprema {
 	}
 
 	 /**
-     * Vraća naziv opreme.
+     * Vraca naziv opreme.
      *
      * @return naziv opreme
      */
@@ -75,7 +75,7 @@ public class Oprema {
 	}
 
 	/**
-     * Vraća tip opreme.
+     * Vraca tip opreme.
      *
      * @return tip opreme
      */
@@ -93,7 +93,7 @@ public class Oprema {
 	}
 
 	/**
-     * Vraća listu aktivnosti u kojima se oprema koristi.
+     * Vraca listu aktivnosti u kojima se oprema koristi.
      *
      * @return lista aktivnosti; prazna lista ako oprema nije povezana ni sa jednom
      *         aktivnošću (nikad {@code null})
@@ -112,7 +112,7 @@ public class Oprema {
 	}
 
 	/**
-     * Vraća tekstualni prikaz opreme.
+     * Vraca tekstualni prikaz opreme.
      *
      * @return string reprezentacija opreme
      */
@@ -123,10 +123,10 @@ public class Oprema {
 
 	/**
      * Kreira opremu sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojeće opreme bez učitavanja
+     * 
+     * Konstruktor se koristi za referenciranje postojece opreme bez ucitavanja
      * svih podataka.
-     * </p>
+     *
      *
      * @param opremaID jedinstveni identifikator opreme
      */
@@ -136,7 +136,7 @@ public class Oprema {
 	}
 
 	 /**
-     * Računa hash kod opreme na osnovu njenog identifikatora.
+     * Racuna hash kod opreme na osnovu njenog identifikatora.
      *
      * @return hash kod opreme
      */
@@ -150,7 +150,7 @@ public class Oprema {
      *
      * @param obj objekat sa kojim se poredi
      * @return {@code true} objekti predstavljaju istu opremu;
-     *         {@code false}objekti različiti
+     *         {@code false}objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

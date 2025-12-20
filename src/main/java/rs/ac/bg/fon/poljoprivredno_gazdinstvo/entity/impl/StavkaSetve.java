@@ -13,13 +13,13 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 /**
- * Predstavlja stavku setve, odnosno konkretnu aktivnost izvršenu
+ * Predstavlja stavku setve, odnosno konkretnu aktivnost izvrsenu
  * u okviru određene setve.
- * <p>
- * Stavka setve povezuje setvu i aktivnost i sadrži dodatne podatke
- * kao što su datum izvršenja i cena aktivnosti. Ova klasa predstavlja
- * asocijativni entitet između {@link Setva} i {@link Aktivnost}.
- * </p>
+ * 
+ * Stavka setve povezuje setvu i aktivnost i sadrzi dodatne podatke
+ * kao sto su datum izvrsenja i cena aktivnosti. Ova klasa predstavlja
+ * asocijativni entitet izmedju {@link Setva} i {@link Aktivnost}.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost
@@ -47,10 +47,10 @@ public class StavkaSetve {
 
 	 /**
      * Kreira stavku setve sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojeće stavke setve
-     * bez učitavanja kompletnih podataka.
-     * </p>
+     * 
+     * Konstruktor se koristi za referenciranje postojece stavke setve
+     * bez ucitavanja kompletnih podataka.
+     * 
      *
      * @param id jedinstveni identifikator stavke setve
      */
@@ -78,7 +78,7 @@ public class StavkaSetve {
 	}
 
 	 /**
-     * Vraća cenu aktivnosti u okviru stavke setve.
+     * Vraca cenu aktivnosti u okviru stavke setve.
      *
      * @return cena aktivnosti
      */
@@ -96,25 +96,25 @@ public class StavkaSetve {
 	}
 
 	/**
-     * Vraća datum izvršenja aktivnosti.
+     * Vraca datum izvrsenja aktivnosti.
      *
-     * @return datum izvršenja aktivnosti
+     * @return datum izvrsenja aktivnosti
      */
 	public LocalDate getDatum() {
 		return datum;
 	}
 
 	/**
-     * Postavlja datum izvršenja aktivnosti.
+     * Postavlja datum izvrsenja aktivnosti.
      *
-     * @param datum datum izvršenja aktivnosti
+     * @param datum datum izvrsenja aktivnosti
      */
 	public void setDatum(LocalDate datum) {
 		this.datum = datum;
 	}
 
 	/**
-     * Vraća setvu kojoj stavka pripada.
+     * Vraca setvu kojoj stavka pripada.
      *
      * @return setva stavke
      */
@@ -132,7 +132,7 @@ public class StavkaSetve {
 	}
 
 	/**
-     * Vraća aktivnost koja je izvršena u okviru stavke setve.
+     * Vrca aktivnost koja je izvrsena u okviru stavke setve.
      *
      * @return aktivnost stavke
      */
@@ -141,7 +141,7 @@ public class StavkaSetve {
 	}
 
 	/**
-     * Postavlja aktivnost koja se izvršava u okviru stavke setve.
+     * Postavlja aktivnost koja se izvrsava u okviru stavke setve.
      *
      * @param aktivnost aktivnost stavke
      */
@@ -161,7 +161,7 @@ public class StavkaSetve {
 	}
 
 	 /**
-     * Računa hash kod stavke setve na osnovu njenog identifikatora.
+     * Racuna hash kod stavke setve na osnovu njenog identifikatora.
      *
      * @return hash kod stavke setve
      */
@@ -174,8 +174,8 @@ public class StavkaSetve {
      * Poredi dve stavke setve na osnovu identifikatora.
      *
      * @param obj objekat sa kojim se poredi
-     * @return {@code true} ako objekti predstavljaju istu stavku setve;
-     *         {@code false} u suprotnom
+     * @return {@code true}  objekti predstavljaju istu stavku setve;
+     *         {@code false} objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

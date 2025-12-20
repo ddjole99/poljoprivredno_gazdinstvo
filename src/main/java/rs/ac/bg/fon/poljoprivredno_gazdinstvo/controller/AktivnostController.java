@@ -21,20 +21,16 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.AktivnostService;
 
 /**
  * REST kontroler za upravljanje aktivnostima.
- * <p>
- * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * Ovaj kontroler obezbedjuje REST API krajnje tacke za:
  * <ul>
  *   <li>prikaz svih aktivnosti</li>
  *   <li>prikaz aktivnosti po identifikatoru</li>
  *   <li>kreiranje nove aktivnosti</li>
- *   <li>ažuriranje postojeće aktivnosti</li>
+ *   <li>ažuriranje postojece aktivnosti</li>
  *   <li>brisanje aktivnosti</li>
  * </ul>
- * </p>
  *
- * <p>
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/aktivnosti}.
- * </p>
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.AktivnostService
  */
@@ -92,7 +88,7 @@ public class AktivnostController {
      *
      * @param id  jedinstveni identifikator aktivnosti
      * @param dto DTO objekat sa izmenjenim podacima o aktivnosti
-     * @return {@link ResponseEntity} sa ažuriranom {@link AktivnostDto}
+     * @return {@link ResponseEntity} sa azuriranom {@link AktivnostDto}
      *         i HTTP statusom {@code 200 OK}
      */
 	@PutMapping("/{id}")
@@ -101,7 +97,7 @@ public class AktivnostController {
 	}
 
 	/**
-     * Briše aktivnost iz sistema.
+     * Brise aktivnost iz sistema.
      *
      * @param id jedinstveni identifikator aktivnosti
      * @return {@link ResponseEntity} bez tela odgovora i HTTP statusom {@code 200 OK}

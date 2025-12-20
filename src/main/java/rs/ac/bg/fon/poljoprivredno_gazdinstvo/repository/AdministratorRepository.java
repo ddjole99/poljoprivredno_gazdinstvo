@@ -8,17 +8,16 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Administrator;
 
 /**
  * Repozitorijum za upravljanje {@link Administrator} entitetima.
- * <p>
- * Ovaj interfejs proširuje {@link JpaRepository} i obezbeđuje
+ * 
+ * Ovaj interfejs prosiruje {@link JpaRepository} i obezbedjuje
  * osnovne CRUD operacije nad administratorima, kao i dodatne
- * metode za proveru jedinstvenosti i pronalaženje administratora
+ * metode za proveru jedinstvenosti i pronalazenje administratora
  * na osnovu email adrese.
- * </p>
+ * 
  *
- * <p>
  * Implementaciju ovog interfejsa automatski generiše Spring Data JPA
  * na osnovu naziva metoda.
- * </p>
+ * 
  *
  * @see org.springframework.data.jpa.repository.JpaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Administrator
@@ -35,11 +34,11 @@ public interface AdministratorRepository extends JpaRepository<Administrator, Lo
 	boolean existsByEmail(String email);
 	
 	/**
-     * Proverava da li administrator sa zadatim korisničkim imenom već postoji u sistemu.
+     * Proverava da li administrator sa zadatim korisnickim imenom već postoji u sistemu.
      *
-     * @param username korisničko ime administratora
-     * @return {@code true} administrator sa datim korisničkim imenom postoji;
-     *         {@code false}administrator sa datim korisničkim imenom ne postoji
+     * @param username korisnicko ime administratora
+     * @return {@code true} administrator sa datim korisnickim imenom postoji;
+     *         {@code false}administrator sa datim korisnickim imenom ne postoji
      */
 	boolean existsByUsername(String username);
 	
@@ -47,7 +46,7 @@ public interface AdministratorRepository extends JpaRepository<Administrator, Lo
      * Pronalazi administratora na osnovu email adrese.
      *
      * @param email email adresa administratora
-     * @return {@link Optional} koji sadrži pronađenog administratora,
+     * @return {@link Optional} koji sadrži pronadjenog administratora,
      *         ili je prazan ako administrator sa datim email-om ne postoji
      */
 	Optional<Administrator> findByEmail(String email);

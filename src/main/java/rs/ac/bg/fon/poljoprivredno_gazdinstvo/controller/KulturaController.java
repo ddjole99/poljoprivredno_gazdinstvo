@@ -21,20 +21,20 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.KulturaService;
 
 /**
  * REST kontroler za upravljanje poljoprivrednim kulturama.
- * <p>
- * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * 
+ * Ovaj kontroler obezbedjuje REST API krajnje tacke za:
  * <ul>
  *   <li>prikaz svih kultura</li>
  *   <li>prikaz kulture po identifikatoru</li>
  *   <li>kreiranje nove kulture</li>
- *   <li>ažuriranje postojeće kulture</li>
+ *   <li>azuriranje postojece kulture</li>
  *   <li>brisanje kulture</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
+ * 
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/kulture}.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.KulturaService
  */
@@ -111,7 +111,7 @@ public class KulturaController {
 	}
 
 	/**
-     * Briše poljoprivrednu kulturu iz sistema.
+     * Brise poljoprivrednu kulturu iz sistema.
      *
      * @param id jedinstveni identifikator kulture
      * @return {@link ResponseEntity} bez tela odgovora i HTTP statusom {@code 200 OK}

@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 
 /**
  * Predstavlja administratora sistema poljoprivrednog gazdinstva.
- * <p>
- * Administrator ima jedinstveno korisničko ime i email adresu i koristi se
+ * 
+ * Administrator ima jedinstveno korisnicko ime i email adresu i koristi se
  * za autentifikaciju i autorizaciju pristupa sistemu.
- * </p>
+ * 
  */
 @Entity
 @Table(uniqueConstraints = { @UniqueConstraint(name = "admin_username", columnNames = "username"),
@@ -44,10 +44,10 @@ public class Administrator {
 
 	 /**
      * Kreira administratora sa zadatim identifikatorom.
-     * <p>
-     * Ovaj konstruktor se najčešće koristi kada je potrebno referencirati
-     * postojećeg administratora bez učitavanja kompletnih podataka.
-     * </p>
+     * 
+     * Ovaj konstruktor se najcesce koristi kada je potrebno referencirati
+     * postojeceg administratora bez ucitavanja kompletnih podataka.
+     * 
      *
      * @param administratorID jedinstveni identifikator administratora
      */
@@ -56,7 +56,7 @@ public class Administrator {
 	}
 
 	 /**
-     * Vraća jedinstveni identifikator administratora.
+     * Vraca jedinstveni identifikator administratora.
      *
      * @return identifikator administratora
      */
@@ -74,7 +74,7 @@ public class Administrator {
 	}
 
 	/**
-     * Vraća email adresu administratora.
+     * Vraca email adresu administratora.
      *
      * @return email adresa administratora
      */
@@ -92,43 +92,43 @@ public class Administrator {
 	}
 
 	/**
-     * Vraća korisničko ime administratora.
+     * Vraca korisnicko ime administratora.
      *
-     * @return korisničko ime administratora
+     * @return korisnicko ime administratora
      */
 	public String getUsername() {
 		return username;
 	}
 
 	 /**
-     * Postavlja korisničko ime administratora.
+     * Postavlja korisnicko ime administratora.
      *
-     * @param username korisničko ime administratora
+     * @param username korisnicko ime administratora
      */
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
 	/**
-     * Vraća heš lozinku administratora.
+     * Vraca hes lozinku administratora.
      *
-     * @return heširana lozinka administratora
+     * @return hesirana lozinka administratora
      */
 	public String getPasswordHash() {
 		return passwordHash;
 	}
 
 	/**
-     * Postavlja heširanu lozinku administratora.
+     * Postavlja hesiranu lozinku administratora.
      *
-     * @param passwordHash heširana lozinka administratora
+     * @param passwordHash hesirana lozinka administratora
      */
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
 
 	/**
-     * Računa hash kod administratora na osnovu email adrese i lozinke.
+     * Racuna hash kod administratora na osnovu email adrese i lozinke.
      *
      * @return hash kod administratora
      */
@@ -138,11 +138,11 @@ public class Administrator {
 	}
 
 	/**
-     * Poredi dva administratora na osnovu email adrese i heširane lozinke.
+     * Poredi dva administratora na osnovu email adrese i hesirane lozinke.
      *
-     * @param  objekat sa kojim se poredi
+     * @param  obj objekat sa kojim se poredi
      * @return {@code true}  objekti predstavljaju istog administratora;
-     *         {@code false} objekti različiti
+     *         {@code false} objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {
@@ -157,7 +157,7 @@ public class Administrator {
 	}
 
 	/**
-     * Vraća tekstualni prikaz administratora.
+     * Vraca tekstualni prikaz administratora.
      *
      * @return string reprezentacija administratora
      */

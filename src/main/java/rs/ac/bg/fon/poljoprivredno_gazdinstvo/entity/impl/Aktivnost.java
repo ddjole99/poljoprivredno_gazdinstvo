@@ -19,10 +19,10 @@ import lombok.NoArgsConstructor;
 /**
  * Predstavlja aktivnost koja se može izvršavati u okviru poljoprivrednih radova
  * (npr. oranje, setva, đubrenje, prskanje).
- * <p>
+ * 
  * Aktivnost ima naziv, tip aktivnosti i skup opreme koja može biti potrebna za
  * njeno izvršavanje. Veza sa opremom je realizovana kao many-to-many relacija.
- * </p>
+ * 
  *
  */
 @Entity
@@ -45,10 +45,10 @@ public class Aktivnost {
 
 	 /**
      * Kreira aktivnost sa zadatim identifikatorom.
-     * <p>
+     * 
      * Konstruktor se koristi kada je potrebno referencirati postojeću aktivnost
      * (npr. pri povezivanju sa drugim entitetima) bez popunjavanja svih polja.
-     * </p>
+     * 
      *
      * @param aktivnostID jedinstveni identifikator aktivnosti
      */
@@ -122,18 +122,18 @@ public class Aktivnost {
 	}
 
 	/**
-     * Postavlja listu opreme povezane sa aktivnošću.
+     * Postavlja listu opreme povezane sa aktivnoscu.
      *
-     * @param oprema lista opreme; može biti prazna, ali ne bi trebalo da bude {@code null}
+     * @param oprema lista opreme; moze biti prazna, ali ne bi trebalo da bude {@code null}
      */
 	public void setOprema(List<Oprema> oprema) {
 		this.oprema = oprema;
 	}
 
 	 /**
-     * Vraća tekstualni prikaz aktivnosti.
+     * Vraca tekstualni prikaz aktivnosti.
      * <p>
-     *  Koristi se naziv aktivnosti kao njen najkraći prikaz.
+     *  Koristi se naziv aktivnosti kao njen najkraci prikaz.
      * </p>
      *
      * @return naziv aktivnosti u vidu teksta
@@ -144,7 +144,7 @@ public class Aktivnost {
 	}
 
 	/**
-     * Računa hash kod aktivnosti na osnovu njenog identifikatora.
+     * Racuna hash kod aktivnosti na osnovu njenog identifikatora.
      *
      * @return hash kod aktivnosti
      */
@@ -158,7 +158,7 @@ public class Aktivnost {
      *
      * @param obj objekat sa kojim se poredi
      * @return {@code true}  objekti predstavljaju istu aktivnost;
-     *         {@code false} objetki različiti
+     *         {@code false} objetki razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

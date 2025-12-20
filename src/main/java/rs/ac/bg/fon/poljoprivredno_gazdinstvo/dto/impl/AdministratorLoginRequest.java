@@ -26,10 +26,10 @@ public class AdministratorLoginRequest {
 
 	/**
      * Email adresa administratora.
-     * <p>
+     * 
      * Polje je obavezno, mora biti u validnom email formatu i
      * može imati najviše 50 karaktera.
-     * </p>
+     * 
      */
 	@NotBlank(message = "Email je obavezan")
 	@Email(message = "Email nije validan")
@@ -38,11 +38,11 @@ public class AdministratorLoginRequest {
 	
 	 /**
      * Lozinka administratora u nešifrovanom obliku.
-     * <p>
+     * 
      * Polje je obavezno i mora imati najmanje 8 karaktera.
-     * Lozinka se koristi isključivo za autentifikaciju i
-     * neće biti direktno čuvana u sistemu.
-     * </p>
+     * Lozinka se koristi iskljucivo za autentifikaciju i
+     * nece biti direktno cuvana u sistemu.
+     * 
      */
 	@NotBlank(message = "Lozinka je obavezna")
 	@Size(min = 8, message = "Lozinka mora imati 6 karaktera")

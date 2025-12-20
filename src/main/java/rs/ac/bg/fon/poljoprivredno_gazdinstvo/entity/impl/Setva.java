@@ -20,11 +20,11 @@ import lombok.NoArgsConstructor;
 
 /**
  * Predstavlja proces setve određene kulture na konkretnoj parceli.
- * <p>
- * Setva je vremenski ograničen proces koji ima definisan period trajanja,
+ * 
+ * Setva je vremenski ogranicen proces koji ima definisan period trajanja,
  * status, odgovornog administratora i skup stavki setve koje detaljno opisuju
- * izvršene aktivnosti u okviru setve.
- * </p>
+ * izvrsene aktivnosti u okviru setve.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Parcela
@@ -64,10 +64,10 @@ public class Setva {
 
 	/**
      * Kreira setvu sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojeće setve bez učitavanja
+     * 
+     * Konstruktor se koristi za referenciranje postojece setve bez ucitavanja
      * kompletnih podataka.
-     * </p>
+     * 
      *
      * @param setvaID jedinstveni identifikator setve
      */
@@ -77,7 +77,7 @@ public class Setva {
 	}
 
 	 /**
-     * Vraća jedinstveni identifikator setve.
+     * Vraca jedinstveni identifikator setve.
      *
      * @return identifikator setve
      */
@@ -95,43 +95,43 @@ public class Setva {
 	}
 
 	/**
-     * Vraća datum početka setve.
+     * Vraca datum pocetka setve.
      *
-     * @return datum početka setve
+     * @return datum pocetka setve
      */
 	public LocalDate getDatumPocetka() {
 		return datumPocetka;
 	}
 
 	/**
-     * Postavlja datum početka setve.
+     * Postavlja datum pocetka setve.
      *
-     * @param datumPocetka datum početka setve
+     * @param datumPocetka datum pocetka setve
      */
 	public void setDatumPocetka(LocalDate datumPocetka) {
 		this.datumPocetka = datumPocetka;
 	}
 
 	/**
-     * Vraća datum završetka setve.
+     * Vraca datum zavrsetka setve.
      *
-     * @return datum završetka setve
+     * @return datum zavrsetka setve
      */
 	public LocalDate getDatumZavrsetka() {
 		return datumZavrsetka;
 	}
 
 	 /**
-     * Postavlja datum završetka setve.
+     * Postavlja datum zavrsetka setve.
      *
-     * @param datumZavrsetka datum završetka setve
+     * @param datumZavrsetka datum zavrsetka setve
      */
 	public void setDatumZavrsetka(LocalDate datumZavrsetka) {
 		this.datumZavrsetka = datumZavrsetka;
 	}
 
 	 /**
-     * Vraća trenutni status setve.
+     * Vraca trenutni status setve.
      *
      * @return status setve
      *
@@ -151,7 +151,7 @@ public class Setva {
 	}
 
 	/**
-     * Vraća administratora odgovornog za setvu.
+     * Vraca administratora odgovornog za setvu.
      *
      * @return administrator setve
      */
@@ -169,7 +169,7 @@ public class Setva {
 	}
 
 	/**
-     * Vraća parcelu na kojoj se setva izvršava.
+     * Vraca parcelu na kojoj se setva izvršava.
      *
      * @return parcela setve
      */
@@ -187,7 +187,7 @@ public class Setva {
 	}
 
 	/**
-     * Vraća kulturu koja se seje.
+     * Vraca kulturu koja se seje.
      *
      * @return kultura setve
      */
@@ -205,7 +205,7 @@ public class Setva {
 	}
 
 	/**
-     * Vraća listu stavki setve.
+     * Vraca listu stavki setve.
      *
      * @return lista stavki setve; prazna lista ako nema stavki (nikad {@code null})
      */
@@ -223,7 +223,7 @@ public class Setva {
 	}
 
 	 /**
-     * Vraća tekstualni prikaz setve.
+     * Vraca tekstualni prikaz setve.
      *
      * @return string reprezentacija setve
      */
@@ -235,7 +235,7 @@ public class Setva {
 	}
 
 	/**
-     * Računa hash kod setve na osnovu njenog identifikatora.
+     * Racuna hash kod setve na osnovu njenog identifikatora.
      *
      * @return hash kod setve
      */
@@ -249,7 +249,7 @@ public class Setva {
      *
      * @param obj objekat sa kojim se poredi
      * @return {@code true} objekti predstavljaju istu setvu;
-     *         {@code false}objekti različiti
+     *         {@code false}objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

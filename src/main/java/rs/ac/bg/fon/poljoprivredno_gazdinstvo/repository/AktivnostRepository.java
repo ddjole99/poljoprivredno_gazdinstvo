@@ -7,16 +7,15 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost;
 
 /**
  * Repozitorijum za upravljanje {@link Aktivnost} entitetima.
- * <p>
- * Ovaj interfejs proširuje {@link JpaRepository} i obezbeđuje
+ * 
+ * Ovaj interfejs prosiruje {@link JpaRepository} i obezbedjuje
  * osnovne CRUD operacije nad aktivnostima u sistemu
  * poljoprivrednog gazdinstva.
- * </p>
- *
- * <p>
- * Implementaciju repozitorijuma automatski generiše Spring Data JPA
+ * 
+ * 
+ * Implementaciju repozitorijuma automatski generise Spring Data JPA
  * na osnovu definisanog interfejsa.
- * </p>
+ * 
  *
  * @see org.springframework.data.jpa.repository.JpaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost

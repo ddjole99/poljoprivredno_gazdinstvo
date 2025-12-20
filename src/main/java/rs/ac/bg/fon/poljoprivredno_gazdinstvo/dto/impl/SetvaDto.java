@@ -16,12 +16,12 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve;
 
 /**
  * DTO za prenos podataka o setvi.
- * <p>
+ * 
  * Ovaj DTO se koristi za kreiranje, izmenu i prikaz setve u okviru
  * sistema poljoprivrednog gazdinstva. Sadrži osnovne informacije o setvi
  * (administrator, parcela, kultura, period trajanja, status) kao i listu
  * stavki setve koje detaljno opisuju izvršene aktivnosti.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.dto.impl.StavkaSetveDto
@@ -59,13 +59,13 @@ public class SetvaDto {
 	private Long parcelaID;
 
 	/**
-     * Datum početka setve koji ne sme biti null.
+     * Datum pocetka setve koji ne sme biti null.
      */
 	@NotNull(message = "Datum pocetka je obavezan")
 	private LocalDate datumPocetka;
 
 	 /**
-     * Datum završetka setve koji ne sme biti null.
+     * Datum zavrsetka setve koji ne sme biti null.
      */
 	@NotNull(message = "Datum zavrsetka je obavezan")
 	private LocalDate datumZavrsetka;
@@ -80,21 +80,21 @@ public class SetvaDto {
 	
 	/**
      * Lista stavki setve.
-     * <p>
-     * Svaka stavka predstavlja jednu konkretnu aktivnost izvršenu
+     * 
+     * Svaka stavka predstavlja jednu konkretnu aktivnost izvrsenu
      * u okviru setve. Validacija se primenjuje i na svaku stavku
-     * pojedinačno.
-     * </p>
+     * pojedinacno.
+     * 
      */
 	@Valid
 	private List<StavkaSetveDto> stavkeSetve=new ArrayList<StavkaSetveDto>();
 	
 	 /**
      * Kreira DTO setve sa zadatim identifikatorom.
-     * <p>
+     * 
      * Konstruktor se koristi kada je potrebno referencirati setvu
      * samo putem njenog identifikatora.
-     * </p>
+     * 
      *
      * @param setvaID jedinstveni identifikator setve
      */

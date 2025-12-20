@@ -30,10 +30,10 @@ public class AdministratorDto {
 	private Long administratorID;
 
 	 /**
-     * Korisničko ime administratora.
-     * <p>
-     * Polje je obavezno i može imati najviše 50 karaktera.
-     * </p>
+     * Korisnicko ime administratora.
+     * 
+     * Polje je obavezno i može imati najvise 50 karaktera.
+     * 
      */
 	@NotBlank(message = "Korisnicko ime je obavezno")
 	@Size(max = 50, message = "Korisnicko ime moze imati najvise 50 karaktera")
@@ -41,10 +41,10 @@ public class AdministratorDto {
 
 	/**
      * Email adresa administratora.
-     * <p>
+     * 
      * Polje je obavezno, mora biti u validnom email formatu i
-     * može imati najviše 50 karaktera.
-     * </p>
+     * moze imati najvise 50 karaktera.
+     * 
      */
 	@NotBlank(message = "Email je obavezan")
 	@Email(message = "Email nije validan")
@@ -53,10 +53,10 @@ public class AdministratorDto {
 
 	/**
      * Kreira DTO administratora sa zadatim identifikatorom.
-     * <p>
+     * 
      * Konstruktor se koristi kada je potrebno referencirati administratora
      * samo putem njegovog identifikatora, bez ostalih podataka.
-     * </p>
+     * 
      *
      * @param administratorID jedinstveni identifikator administratora
      */

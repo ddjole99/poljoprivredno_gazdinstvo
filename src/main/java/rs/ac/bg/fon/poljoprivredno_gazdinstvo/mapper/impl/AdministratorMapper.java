@@ -10,7 +10,7 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
 /**
  * Mapper za konverziju između administrator entiteta i odgovarajućih DTO objekata.
- * <p>
+ * 
  * Ova klasa sadrži logiku za:
  * <ul>
  *   <li>mapiranje {@link Administrator} entiteta u {@link AdministratorDto}</li>
@@ -18,12 +18,11 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
  *   <li>ažuriranje postojećeg {@link Administrator} entiteta na osnovu
  *       {@link AdministratorUpdateRequest}</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
  * Mapper je registrovan kao Spring bean pomoću anotacije {@link Component}
  * i koristi se u servisnom sloju.
- * </p>
+ * 
  */
 @Component
 public class AdministratorMapper{
@@ -47,10 +46,10 @@ public class AdministratorMapper{
 	
 	/**
      * Kreira {@link Administrator} entitet na osnovu zahteva za kreiranje.
-     * <p>
-     * Ova metoda ne postavlja lozinku, jer se njeno heširanje i postavljanje
-     * vrši u servisnom sloju.
-     * </p>
+     * 
+     * Ova metoda ne postavlja lozinku, jer se njeno hesiranje i postavljanje
+     * vrsi u servisnom sloju.
+     * 
      *
      * @param req zahtev za kreiranje administratora
      * @return novi administrator entitet;
@@ -69,13 +68,13 @@ public class AdministratorMapper{
 	}
 	
 	/**
-     * Ažurira postojeći {@link Administrator} entitet na osnovu zahteva za izmenu.
-     * <p>
-     * Metoda menja samo dozvoljena polja (korisničko ime i email).
-     * </p>
+     * Azurira postojeci {@link Administrator} entitet na osnovu zahteva za izmenu.
+     * 
+     * Metoda menja samo dozvoljena polja (korisnicko ime i email).
+     * 
      *
      * @param req   zahtev za izmenu administratora
-     * @param admin administrator entitet koji se ažurira
+     * @param admin administrator entitet koji se azurira
      */
 	public void update(AdministratorUpdateRequest req, Administrator admin) {
 		if(req==null || admin==null)

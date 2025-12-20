@@ -23,20 +23,19 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.AdministratorService;
 
 /**
  * REST kontroler za upravljanje administratorima sistema.
- * <p>
- * Ovaj kontroler obezbeđuje REST API krajnje tačke za:
+ * 
+ * Ovaj kontroler obezbedjuje REST API krajnje tacke za:
  * <ul>
  *   <li>prikaz svih administratora</li>
  *   <li>prikaz administratora po identifikatoru</li>
- *   <li>ažuriranje podataka administratora</li>
+ *   <li>azuriranje podataka administratora</li>
  *   <li>brisanje administratora</li>
  *   <li>promenu lozinke administratora</li>
  * </ul>
- * </p>
+ * 
  *
- * <p>
  * Svi zahtevi su mapirani pod osnovnom putanjom {@code /api/administratori}.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.service.AdministratorService
  */
@@ -48,7 +47,7 @@ public class AdministratorController {
 	private final AdministratorService administratorService;
 	
 	/**
-     * Vraća listu svih administratora u sistemu.
+     * Vraca listu svih administratora u sistemu.
      *
      * @return {@link ResponseEntity} sa listom {@link AdministratorDto} objekata
      *         i HTTP statusom {@code 200 OK}
@@ -106,10 +105,8 @@ public class AdministratorController {
 	
 	/**
      * Menja lozinku administratora.
-     * <p>
      * Stara lozinka se koristi za verifikaciju identiteta,
-     * a nova lozinka se bezbedno hešira pre čuvanja.
-     * </p>
+     * a nova lozinka se bezbedno hesira pre cuvanja.
      *
      * @param id  jedinstveni identifikator administratora
      * @param req zahtev za promenu lozinke

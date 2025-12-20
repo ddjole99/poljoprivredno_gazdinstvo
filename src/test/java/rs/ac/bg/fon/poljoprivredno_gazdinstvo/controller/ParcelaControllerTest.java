@@ -79,14 +79,14 @@ class ParcelaControllerTest {
 	void testCreateParcelu() throws Exception {
 		ParcelaDto request = new ParcelaDto();
 		request.setNaziv("Nova parcela");
-		request.setLokacija("Surčin");
+		request.setLokacija("Reka");
 		request.setPovrsina(5.0);
 		request.setTipZemljista(1L);
 
 		ParcelaDto created = new ParcelaDto();
 		created.setParcelaID(10L);
 		created.setNaziv("Nova parcela");
-		created.setLokacija("Surčin");
+		created.setLokacija("Reka");
 		created.setPovrsina(5.0);
 		created.setTipZemljista(1L);
 
@@ -95,7 +95,7 @@ class ParcelaControllerTest {
 		mockMvc.perform(post("/api/parcele").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(request))).andExpect(status().isCreated())
 				.andExpect(jsonPath("$.parcelaID").value(10)).andExpect(jsonPath("$.naziv").value("Nova parcela"))
-				.andExpect(jsonPath("$.lokacija").value("Surčin")).andExpect(jsonPath("$.povrsina").value(5.0))
+				.andExpect(jsonPath("$.lokacija").value("Reka")).andExpect(jsonPath("$.povrsina").value(5.0))
 				.andExpect(jsonPath("$.tipZemljista").value(1));
 	}
 

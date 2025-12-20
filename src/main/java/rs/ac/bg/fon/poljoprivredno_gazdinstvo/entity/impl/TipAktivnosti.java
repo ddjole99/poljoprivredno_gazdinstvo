@@ -2,11 +2,11 @@ package rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl;
 
 /**
  * Predstavlja tip poljoprivredne aktivnosti.
- * <p>
+ * s
  * Tip aktivnosti se koristi za klasifikaciju aktivnosti u okviru setve
- * i omogućava grupisanje i lakše upravljanje različitim vrstama
+ * i omogucava grupisanje i lakse upravljanje razlicitim vrstama
  * poljoprivrednih radova.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Aktivnost
  */

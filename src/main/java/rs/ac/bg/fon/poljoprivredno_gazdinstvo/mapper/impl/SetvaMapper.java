@@ -12,20 +12,19 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.StavkaSetve;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
 /**
- * Mapper za konverziju između {@link Setva} entiteta i {@link SetvaDto}.
- * <p>
- * Ova klasa mapira složeni agregat {@code Setva}, uključujući:
+ * Mapper za konverziju izmedju {@link Setva} entiteta i {@link SetvaDto}.
+ * 
+ * Ova klasa mapira slozeni agregat {@code Setva}, ukljucujuci:
  * <ul>
  *   <li>osnovne podatke o setvi (datumi, status)</li>
  *   <li>reference na administratora, parcelu i kulturu (putem ID-jeva)</li>
- *   <li>listu stavki setve koje predstavljaju izvršene aktivnosti</li>
+ *   <li>listu stavki setve koje predstavljaju izvrsene aktivnosti</li>
  * </ul>
- * </p>
- *
- * <p>
- * Mapper je registrovan kao Spring bean pomoću anotacije {@link Component}
+ * 
+ * 
+ * Mapper je registrovan kao Spring bean pomocu anotacije {@link Component}
  * i koristi se u servisnom sloju aplikacije.
- * </p>
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Setva
@@ -37,7 +36,7 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 	/**
      * {@inheritDoc}
      *
-     * <p>
+     * 
      * Prilikom mapiranja:
      * <ul>
      *   <li>reference na administratora, parcelu i kulturu mapiraju se
@@ -46,7 +45,7 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
      *   <li>ako neka referenca nije postavljena, odgovarajući ID u DTO-u
      *       će biti {@code null}</li>
      * </ul>
-     * </p>
+     * 
      */
 	@Override
 	public SetvaDto toDto(Setva e) {
@@ -84,7 +83,7 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
 	/**
      * {@inheritDoc}
      *
-     * <p>
+     * 
      * Prilikom mapiranja iz DTO-a u entitet:
      * <ul>
      *   <li>kreira se nova instanca {@link Setva}</li>
@@ -92,12 +91,12 @@ public class SetvaMapper implements DtoEntityMapper<SetvaDto, Setva> {
      *   <li>svaka stavka se povezuje sa roditeljskom setvom</li>
      *   <li>aktivnost se mapira korišćenjem njenog identifikatora</li>
      * </ul>
-     * </p>
+     * 
      *
-     * <p>
+     * 
      * Reference na administratora, parcelu i kulturu se ne postavljaju
-     * direktno u ovoj metodi, već se obično dodaju u servisnom sloju.
-     * </p>
+     * direktno u ovoj metodi, vec se obicno dodaju u servisnom sloju.
+     * 
      */
 	@Override
 	public Setva toEntity(SetvaDto dto) {

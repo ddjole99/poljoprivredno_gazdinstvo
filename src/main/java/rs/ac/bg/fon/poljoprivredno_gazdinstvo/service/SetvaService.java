@@ -24,19 +24,18 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.SetvaRepository;
 
 /**
  * Servisni sloj za upravljanje setvama u sistemu.
- * <p>
+ * 
  * Setva predstavlja centralni poslovni entitet koji povezuje:
  * administratora, parcelu, kulturu i listu stavki setve (aktivnosti sa datumom i cenom).
- * </p>
  *
- * <p>
- * Ova klasa sadrži poslovnu logiku vezanu za:
+ * 
+ * Ova klasa sadrzi poslovnu logiku vezanu za:
  * <ul>
  *   <li>upravljanje setvama (CRUD)</li>
  *   <li>validaciju postojanja povezanih entiteta (administrator, parcela, kultura, aktivnost)</li>
- *   <li>kreiranje i ažuriranje stavki setve uz održavanje veza parent-child</li>
+ *   <li>kreiranje i azuriranje stavki setve uz odrzavanje veza parent-child</li>
  * </ul>
- * </p>
+ *
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.repository.SetvaRepository
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.impl.SetvaMapper
@@ -55,7 +54,7 @@ public class SetvaService {
 	private final AktivnostRepository aktivnostRepository;
 	
 	/**
-     * Vraća listu svih setvi u sistemu.
+     * Vraca listu svih setvi u sistemu.
      *
      * @return lista {@link SetvaDto} objekata
      */
@@ -76,10 +75,9 @@ public class SetvaService {
 
 	/**
      * Kreira novu setvu u sistemu.
-     * <p>
+     * 
      * Metoda validira postojanje administratora, parcele i kulture,
      * mapira DTO u entitet i povezuje setvu sa stavkama setve.
-     * </p>
      *
      * @param setvaDto DTO objekat sa podacima o setvi i njenim stavkama
      * @return {@link SetvaDto} kreirane setve
@@ -111,25 +109,23 @@ public class SetvaService {
 	}
 
 	 /**
-     * Ažurira postojeću setvu.
-     * <p>
-     * Metoda ažurira osnovna polja setve (datumi, status i veze sa entitetima),
-     * a zatim ponovo formira listu stavki setve na osnovu prosleđenog DTO-a.
-     * </p>
+     * Azurira postojecu setvu.
+     * 
+     * Metoda azurira osnovna polja setve (datumi, status i veze sa entitetima),
+     * a zatim ponovo formira listu stavki setve na osnovu prosledjenog DTO-a.
+     * 
      *
-     * <p>
-     * Tokom ažuriranja:
+     * Tokom azuriranja:
      * <ul>
      *   <li>proverava se postojanje setve</li>
      *   <li>proverava se postojanje administratora, parcele i kulture</li>
-     *   <li>postojeće stavke se brišu iz kolekcije i formira se nova lista</li>
+     *   <li>postojece stavke se brisu iz kolekcije i formira se nova lista</li>
      *   <li>za svaku stavku se validira postojanje aktivnosti</li>
      * </ul>
-     * </p>
      *
      * @param setvaDto DTO objekat sa izmenjenim podacima o setvi i stavkama
      * @param id       jedinstveni identifikator setve
-     * @return {@link SetvaDto} ažurirana setva
+     * @return {@link SetvaDto} azurirana setva
      *
      * @throws jakarta.persistence.EntityNotFoundException
      *         ako setva, administrator, parcela, kultura ili aktivnost ne postoje
@@ -175,7 +171,7 @@ public class SetvaService {
 	}
 
 	/**
-     * Briše setvu iz sistema.
+     * Brise setvu iz sistema.
      *
      * @param id jedinstveni identifikator setve
      *

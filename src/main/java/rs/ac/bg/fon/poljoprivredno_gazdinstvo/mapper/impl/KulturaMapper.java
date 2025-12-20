@@ -7,12 +7,12 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Kultura;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
 /**
- * Mapper za konverziju između {@link Kultura} entiteta i {@link KulturaDto}.
- * <p>
- * Ova klasa implementira generički {@link DtoEntityMapper} interfejs
- * i obezbeđuje mapiranje osnovnih atributa poljoprivredne kulture
- * između domenskog i DTO sloja.
- * </p>
+ * Mapper za konverziju izmedju {@link Kultura} entiteta i {@link KulturaDto}.
+ * 
+ * Ova klasa implementira genericki {@link DtoEntityMapper} interfejs
+ * i obezbedjuje mapiranje osnovnih atributa poljoprivredne kulture
+ * izmedju domenskog i DTO sloja.
+ * 
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
  */

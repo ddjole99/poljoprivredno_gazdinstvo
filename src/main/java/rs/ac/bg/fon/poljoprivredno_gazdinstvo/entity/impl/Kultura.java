@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 /**
  * Predstavlja poljoprivrednu kulturu koja se uzgaja na parcelama
  * u okviru poljoprivrednog gazdinstva.
- * <p>
+ * 
  * Kultura je definisana nazivom (npr. pšenica, kukuruz) i sortom.
- * </p>
+ * 
  */
 @Entity
 @NoArgsConstructor
@@ -30,7 +30,7 @@ public class Kultura {
 	private String sorta;
 
 	 /**
-     * Vraća jedinstveni identifikator kulture.
+     * Vraca jedinstveni identifikator kulture.
      *
      * @return identifikator kulture
      */
@@ -48,7 +48,7 @@ public class Kultura {
 	}
 
 	/**
-     * Vraća naziv kulture.
+     * Vraca naziv kulture.
      *
      * @return naziv kulture
      */
@@ -66,7 +66,7 @@ public class Kultura {
 	}
 
 	 /**
-     * Vraća sortu kulture.
+     * Vraca sortu kulture.
      *
      * @return sorta kulture
      */
@@ -84,10 +84,10 @@ public class Kultura {
 	}
 
 	/**
-     * Vraća tekstualni prikaz kulture.
-     * <p>
+     * Vraca tekstualni prikaz kulture.
+     * 
      * Prikaz se sastoji od naziva i sorte kulture.
-     * </p>
+     * 
      *
      * @return string reprezentacija kulture
      */
@@ -98,10 +98,10 @@ public class Kultura {
 
 	/**
      * Kreira kulturu sa zadatim identifikatorom.
-     * <p>
-     * Konstruktor se koristi za referenciranje postojeće kulture
-     * bez učitavanja kompletnih podataka.
-     * </p>
+     * 
+     * Konstruktor se koristi za referenciranje postojece kulture
+     * bez ucitavanja kompletnih podataka.
+     * 
      *
      * @param kulturaID jedinstveni identifikator kulture
      */
@@ -111,7 +111,7 @@ public class Kultura {
 	}
 
 	/**
-     * Računa hash kod kulture na osnovu njenog identifikatora.
+     * Racuna hash kod kulture na osnovu njenog identifikatora.
      *
      * @return hash kod kulture
      */
@@ -125,7 +125,7 @@ public class Kultura {
      *
      * @param obj objekat sa kojim se poredi
      * @return {@code true}  objekti predstavljaju istu kulturu;
-     *         {@code false} objekti različiti
+     *         {@code false} objekti razliciti
      */
 	@Override
 	public boolean equals(Object obj) {

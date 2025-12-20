@@ -7,12 +7,12 @@ import rs.ac.bg.fon.poljoprivredno_gazdinstvo.entity.impl.Oprema;
 import rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper;
 
 /**
- * Mapper za konverziju između {@link Oprema} entiteta i {@link OpremaDto}.
- * <p>
- * Ova klasa implementira generički {@link DtoEntityMapper} interfejs
- * i obezbeđuje mapiranje osnovnih atributa opreme između
+ * Mapper za konverziju izmedju {@link Oprema} entiteta i {@link OpremaDto}.
+ * 
+ * Ova klasa implementira genericki {@link DtoEntityMapper} interfejs
+ * i obezbedjuje mapiranje osnovnih atributa opreme izmedju
  * domenskog i DTO sloja.
- * </p>
+ *
  *
  * @see rs.ac.bg.fon.poljoprivredno_gazdinstvo.mapper.DtoEntityMapper
  */

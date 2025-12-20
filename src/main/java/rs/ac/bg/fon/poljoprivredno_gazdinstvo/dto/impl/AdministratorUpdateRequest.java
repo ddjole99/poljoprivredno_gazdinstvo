@@ -25,10 +25,10 @@ import lombok.Setter;
 public class AdministratorUpdateRequest {
 
 	/**
-     * Novo korisničko ime administratora.
-     * <p>
-     * Polje je obavezno i može imati najviše 50 karaktera.
-     * </p>
+     * Novo korisnicko ime administratora.
+     * 
+     * Polje je obavezno i moze imati najviše 50 karaktera.
+     * 
      */
 	@NotBlank(message = "Korisnicko ime je obavezno")
 	@Size(max = 50, message = "Korisnicko ime moze imati najvise 50 karaktera")
@@ -36,10 +36,10 @@ public class AdministratorUpdateRequest {
 
 	/**
      * Nova email adresa administratora.
-     * <p>
+     *
      * Polje je obavezno, mora biti u validnom email formatu i
-     * može imati najviše 50 karaktera.
-     * </p>
+     * moze imati najvise 50 karaktera.
+     * 
      */
 	@NotBlank(message = "Email je obavezan")
 	@Email(message = "Email nije validan")
